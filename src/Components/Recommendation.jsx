@@ -101,9 +101,6 @@ const Recommendation = ({category}) => {
                     </div>
                 </div>
             </div>
-            {/* <div className="product-card">
-                <InlineWidget url="https://calendly.com/lavakumared15/appointment?month=2022-04" />
-            </div> */}
         </div>
     </>
     )
