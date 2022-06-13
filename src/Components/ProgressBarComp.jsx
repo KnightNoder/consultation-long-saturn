@@ -16,7 +16,8 @@ const ProgressBarComp = ({progress_step,img_1,img_2,img_3,img_4}) => {
           {({ accomplished }) => (
             <img
             className='progress-bar-image'
-            src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-1.png?v=1655109040"
+            // src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-1.png?v=1655109040"
+            src={img_1}
             />
             )}
         </Step>
@@ -24,7 +25,8 @@ const ProgressBarComp = ({progress_step,img_1,img_2,img_3,img_4}) => {
           {({ accomplished }) => (
             <img
             className='progress-bar-image'
-            src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-2.png?v=1655109040"
+            // src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-2.png?v=1655109040"
+            src={img_2}
             />
             )}
         </Step>
@@ -32,7 +34,8 @@ const ProgressBarComp = ({progress_step,img_1,img_2,img_3,img_4}) => {
           {({ accomplished }) => (
             <img
             className='progress-bar-image'
-            src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-3.png?v=1655109040"
+            // src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-3.png?v=1655109040"
+            src={img_3}
             />
             )}
         </Step>
@@ -40,7 +43,8 @@ const ProgressBarComp = ({progress_step,img_1,img_2,img_3,img_4}) => {
           {({ accomplished }) => (
             <img
               className='progress-bar-image'
-              src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-4.png?v=1655109040"
+              // src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-4.png?v=1655109040"
+              src={img_4}
               />
           )}
         </Step>

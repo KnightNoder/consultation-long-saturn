@@ -21,7 +21,11 @@ const WeightLossTwo = ({saturn_long_choice,Set_minor_data}) => {
           We would love to get to know you better! Can you tell us more about your lifestyle?  
         </div>
         <div className='progress-bar-saturn-step'>
-          <ProgressBarComp progress_step="66.5"/>
+          <ProgressBarComp progress_step="66.5" 
+          img_1="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-1.png?v=1655109040"
+          img_2="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-2.png?v=1655109040"
+          img_3="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-3.png?v=1655109040"
+          img_4="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-4.png?v=1655109040"/>
         </div>
         <div className="choice-container">
             <div className='assessment-image'>
