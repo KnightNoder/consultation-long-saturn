@@ -38,7 +38,7 @@ html {
   margin-bottom: 1%;
 }
 
-.container {
+.progress-bar-container {
   margin: 0 20%;
   text-align: center;
 }
@@ -77,6 +77,10 @@ html {
   color: #FFFFFF; 
   z-index:999;
   flex-direction: column;
+}
+
+img {
+  max-width: 0%;
 }
 
 .dont-show-radio{
