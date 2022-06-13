@@ -7,7 +7,7 @@ const ProgressBarComp = ({progress_step,img_1,img_2,img_3,img_4}) => {
     <>
     <div className='progress-container'>
 
-    <div className='container'>
+    <div className='progress-bar-container'>
     <ProgressBar
         percent={progress_step}
         filledBackground="#975169"
