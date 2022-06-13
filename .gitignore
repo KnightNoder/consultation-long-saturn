@@ -10,9 +10,9 @@
 
 # production
 # /build
-src/Components/Beard
-src/Components/Hair
-src/Components/Performance
+# src/Components/Beard
+# src/Components/Hair
+# src/Components/Performance
 # misc
 .DS_Store
 .env.local
