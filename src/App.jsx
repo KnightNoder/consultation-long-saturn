@@ -182,7 +182,7 @@ const Set_others_input = (item,val) => {
   },[saturn_long_choice])
 
   return (
-    <BrowserRouter basename="/pages/long-consultation/s"> 
+    <BrowserRouter basename="/pages/long-consultation-saturn"> 
        <div className='main-container'>
            <Routes>
              <Route path='/' exact element={<LandingPage Set_data={Set_data}/>}/>
