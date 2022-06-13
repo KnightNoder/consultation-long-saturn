@@ -19,7 +19,7 @@ const WeightLossTwo = ({saturn_long_choice,Set_minor_data}) => {
   return (
     <>
 
-        <div className='progress-bar'>
+        <div className='progress-bar-saturn-step'>
           <ProgressBarComp progress_step="81"/>
         </div>
         <div className={`${disp ? "show-overlay-screen" : "hide-overlay-screen"}`}>

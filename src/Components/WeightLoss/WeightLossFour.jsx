@@ -99,7 +99,7 @@ const WeightLossTwo = ({saturn_long_choice,Set_minor_data}) => {
         <div className={`${disp ? "show-overlay-screen" : "hide-overlay-screen"}`}>
           We would love to get to know you better! Can you tell us more about your lifestyle?
         </div>
-        <div className='progress-bar'>
+        <div className='progress-bar-saturn-step'>
           <ProgressBarComp progress_step="45"/>
         </div>
         <div className="choice-container">

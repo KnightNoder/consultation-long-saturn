@@ -18,7 +18,7 @@ const SkinTwo = ({saturn_long_choice,Set_minor_data}) => {
         <div className={`${disp ? "show-overlay-screen" : "hide-overlay-screen"}`}>
           Skin concerns are unique to each individual and one needs the right care to keep up with good skin health
         </div>
-        <div className='progress-bar'>
+        <div className='progress-bar-saturn-step'>
           <ProgressBarComp progress_step="39.5"/>
         </div>
         <div className="choice-container">

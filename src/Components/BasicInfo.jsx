@@ -61,7 +61,7 @@ const BasicInfo = ({saturn_long_choice,Set_minor_data}) => {
         <div className={`${disp ? "show-overlay-screen" : "hide-overlay-screen"}`}>
             We will need your contact details to reach out for the consultation
         </div>
-        <div className='progress-bar'>
+        <div className='progress-bar-saturn-step'>
           <ProgressBarComp progress_step="20"/>
         </div>
         <div className="choice-container">

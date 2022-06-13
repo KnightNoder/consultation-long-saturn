@@ -19,7 +19,7 @@ const SkinOne = ({saturn_long_choice,Set_minor_data}) => {
         <div className={`${disp ? "show-overlay-screen" : "hide-overlay-screen"}`}>
           Answer a few questions so we can help
         </div>
-        <div className='progress-bar'>
+        <div className='progress-bar-saturn-step'>
           <ProgressBarComp progress_step="34"/>
         </div>
         <div className="choice-container">

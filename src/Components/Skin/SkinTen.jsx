@@ -21,7 +21,7 @@ const WeightLossTwo = ({saturn_long_choice,Set_minor_data}) => {
         <div className={`${disp ? "show-overlay-screen" : "hide-overlay-screen"}`}>
           There's something special about outside food--tastier, love! Though homemade food is healthy :)
         </div>
-        <div className='progress-bar'>
+        <div className='progress-bar-saturn-step'>
           <ProgressBarComp progress_step="66.5"/>
         </div>
         <div className="choice-container">
