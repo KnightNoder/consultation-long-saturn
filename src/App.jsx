@@ -4,7 +4,6 @@ import { useEffect,useState } from 'react';
 import {BrowserRouter,Route,Routes} from 'react-router-dom';
 import Appointment from './Components/Appointment';
 import Recommendation from './Components/Recommendation';
-import Book from './Components/Book'
 import Callback from './Components/Callback';
 import ChoicePage from './Components/ChoicePage'
 import LandingPage  from './Components/LandingPage';
