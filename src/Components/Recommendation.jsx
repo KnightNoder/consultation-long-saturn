@@ -5,7 +5,6 @@ import phone from '../images/call.png'
 import productReco_1 from '../images/product-reco-1.png';
 import productReco_2 from '../images/product-reco-2.png';
 import GenericButton from './GenericButton';
-import { InlineWidget } from "react-calendly";
 import '../css/Recommendation.css'
 
 const Recommendation = ({category}) => {
