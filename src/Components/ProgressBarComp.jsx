@@ -2,7 +2,7 @@ import React from 'react'
 import "react-step-progress-bar/styles.css";
 import { ProgressBar,Step  } from "react-step-progress-bar";
 
-const ProgressBarComp = ({progress_step,img_1,img_2,img_3,img_4}) => {
+const ProgressBarComp = ({progress_step,img_1,img_2,img_3,img_4,text}) => {
   return (
     <>
     <div className='progress-container'>
@@ -52,7 +52,7 @@ const ProgressBarComp = ({progress_step,img_1,img_2,img_3,img_4}) => {
         </div>
         <div style={{display:"flex",justifyContent:"space-between",marginTop:"3%",width:"65%", marginLeft:"17%"}}>
             <div>Basic Details</div>
-            <div>My Skin</div>
+            <div>{text}</div>
             <div>Life Style</div>
             <div>Health</div>
         </div>

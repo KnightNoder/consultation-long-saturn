@@ -19,7 +19,12 @@ const SkinTwo = ({saturn_long_choice,Set_minor_data}) => {
           Skin concerns are unique to each individual and one needs the right care to keep up with good skin health
         </div>
         <div className='progress-bar-saturn-step'>
-          <ProgressBarComp progress_step="39.5"/>
+          <ProgressBarComp progress_step="39.5"
+          img_1="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-1.png?v=1655109040"
+          img_2="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-2.png?v=1655109040"
+          img_3="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-3.png?v=1655109040"
+          img_4="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-4.png?v=1655109040"
+          text="My Skin"/>
         </div>
         <div className="choice-container">
             <div className='assessment-image'>
