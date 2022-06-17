@@ -1,4 +1,4 @@
-const getCategory = (choice) => {
+export const getCategory = (choice) => {
   switch (choice) {
     case "Hairfall":
       return "hair-1";
@@ -13,7 +13,7 @@ const getCategory = (choice) => {
   }
 };
 
-const getProductId = (saturn_long_choice) => {
+export const getProductId = (saturn_long_choice) => {
   // const hair_current_condition = window.localStorage.getItem(
   //   "hair_current_condition"
   // );
@@ -176,7 +176,7 @@ const getProductId = (saturn_long_choice) => {
   }
 };
 
-const getSendMailData = (saturn_long_choice) => {
+export const getSendMailData = (saturn_long_choice) => {
   const choice = saturn_long_choice.category;
   const keys = Object.keys(saturn_long_choice.weight_management.check_list);
 
@@ -342,4 +342,4 @@ const getSendMailData = (saturn_long_choice) => {
   return data;
 };
 
-module.exports = { getCategory, getProductId, getSendMailData };
+// module.exports = { getCategory, getProductId, getSendMailData };
