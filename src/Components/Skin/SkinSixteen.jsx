@@ -33,7 +33,7 @@ const SkinFour = ({saturn_long_choice,Set_minor_data}) => {
                 <ImageCard/>
             </div>
             <div className='assessment'>
-              <h5>Are you allergic to any of the ingredients </h5>
+              <h5>Are you allergic to any of the ingredients? </h5>
               <ChoiceCard show={disp} 
                 clickHandler={()=> Set_minor_data("skin","skin_allergy_to","Vitamin C")} noImage="true"
                  choice={saturn_long_choice.skin.skin_allergy_to} value="Vitamin C" text="Vitamin C"/>

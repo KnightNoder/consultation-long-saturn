@@ -27,7 +27,7 @@ const SkinOne = ({saturn_long_choice,Set_minor_data}) => {
               <ImageCard/>    
             </div>
             <div className='assessment'>
-              <h5>Which type of food do u mostly consume?</h5>
+              <h5>Which type of food do you mostly consume?</h5>
               <div className='scroll-div'>
                 <ChoiceCard show={disp}
                   clickHandler={() => Set_minor_data("skin","food_type","Oily")} noImage="true" choice={saturn_long_choice.skin.food_type} value="Oily" text="Oily"/>

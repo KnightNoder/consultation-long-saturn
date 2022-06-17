@@ -72,7 +72,7 @@ const WeightLossTwo = ({saturn_long_choice,Set_minor_data}) => {
                 <ImageCard/>
             </div>
             <div className='assessment'>
-              <h5>Which type of food do u mostly consume?</h5>
+              <h5>Which type of food do you mostly consume?</h5>
               <ChoiceCard 
                 clickHandler={() => Set_minor_data("weight_management","food_type","Oily")} noImage="true" choice={saturn_long_choice.weight_management.food_type} value="Oily" text="Oily"/>
               <ChoiceCard 

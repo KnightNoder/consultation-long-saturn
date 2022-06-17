@@ -13,14 +13,14 @@ const getCategory = (choice) => {
   }
 };
 
-const getProductId = (saturn_choice) => {
+const getProductId = (saturn_long_choice) => {
   // const hair_current_condition = window.localStorage.getItem(
   //   "hair_current_condition"
   // );
   // const past_allergy = window.localStorage.getItem("past_allergy");
   // const big_event_120_days = window.localStorage.getItem("big_event_120_days");
   // const age = window.localStorage.getItem("age");
-  switch (saturn_choice.category) {
+  switch (saturn_long_choice.category) {
     // case "Hairfall":
     //   if (hair_current_condition == "Condition one") {
     //     return "";
@@ -52,8 +52,8 @@ const getProductId = (saturn_choice) => {
     //     return "6980058677412";
     //   else return "6743341072548";
     case "weight-management":
-      const weight = parseInt(saturn_choice.user_info.weight);
-      const height = parseInt(saturn_choice.user_info.height);
+      const weight = parseInt(saturn_long_choice.user_info.weight);
+      const height = parseInt(saturn_long_choice.user_info.height);
       const BMI = (weight * 10000) / (height * height);
       if (BMI > 25) return ["7679735759070", "7634556059870"];
       else return ["7679735759070", "7634556059870"];
@@ -93,8 +93,8 @@ const getProductId = (saturn_choice) => {
     //   return "6718215651492";
     // else return "6734347174052";
     case "skin":
-      const skin_concern = saturn_choice.skin.skin_concern;
-      const skin_allergy_to = saturn_choice.skin.skin_allergy_to;
+      const skin_concern = saturn_long_choice.skin.skin_concern;
+      const skin_allergy_to = saturn_long_choice.skin.skin_allergy_to;
       if (skin_allergy_to == "None") {
         if (skin_concern == "Open pores")
           return ["7602721095902", "7658081157342"]; //GLOWSKINSERUM  - [1,2]
@@ -176,12 +176,19 @@ const getProductId = (saturn_choice) => {
   }
 };
 
-const getSendMailData = (saturn_choice) => {
-  const choice = saturn_choice.category;
-  const keys = Object.keys(saturn_choice.weight_management.check_list);
+const getSendMailData = (saturn_long_choice) => {
+  const choice = saturn_long_choice.category;
+  const keys = Object.keys(saturn_long_choice.weight_management.check_list);
+
   const filtered_string = keys.filter(function (key) {
-    return saturn_choice.weight_management.check_list[key];
+    return saturn_long_choice.weight_management.check_list[key];
   });
+
+  const keys2 = Object.keys(saturn_long_choice.skin.health_issues);
+  const filtered_string2 = keys2.filter(function (key) {
+    return saturn_long_choice.weight_management.check_list[key];
+  });
+
   var stateObject = {
     // Hairfall: {
     //   "What is the current condition of your hair and scalp?":
@@ -203,20 +210,68 @@ const getSendMailData = (saturn_choice) => {
     //     window.localStorage.getItem("family_beard_growth_issues"),
     // },
     "weight-management": {
-      Height: saturn_choice.user_info.height,
-      Weight: saturn_choice.user_info.weight,
+      Height: saturn_long_choice.user_info.height,
+      Weight: saturn_long_choice.user_info.weight,
       "How often do you eat meals in a day?":
-        saturn_choice.weight_management.meals_a_day,
+        saturn_long_choice.weight_management.meals_a_day,
       "How many days do you exercise in a week?":
-        saturn_choice.weight_management.exercise_a_week,
+        saturn_long_choice.weight_management.exercise_a_week,
       "Do you have any pre-existing problems?": filtered_string.toString(),
+      "How about your work style?":
+        saturn_long_choice.weight_management.work_style,
+      "Do you have any past allergy reactions to medicines?":
+        saturn_long_choice.weight_management.past_allergy,
+      "Which type of food do you prefer?":
+        saturn_long_choice.weight_management.food_preference,
+      "May I know your water intake per day in litres?":
+        saturn_long_choice.weight_management.water_intake,
+      "Do you smoke or drink?":
+        saturn_long_choice.weight_management.smoke_drink,
+      "May I know your sleeping pattern?":
+        saturn_long_choice.weight_management.sleeping_pattern,
+      "Which type of food do you mostly consume?":
+        saturn_long_choice.weight_management.food_type,
+      "Did you use any weight management products before?":
+        saturn_long_choice.weight_management.weight_management_products,
+      "Does anyone in your family are overweight/obese?":
+        saturn_long_choice.weight_management.overweight,
+      "Since when did you observe you are not in control of your weight?":
+        saturn_long_choice.weight_management.not_in_control,
     },
     skin: {
-      "What are you concerned about?": saturn_choice.skin.skin_concern,
-      // "Please select your skin texture": saturn_choice.skin.skin_texture,
-      "Describe your skin type": saturn_choice.skin.skin_texture,
+      "What are you concerned about?": saturn_long_choice.skin.skin_concern,
+      // "Please select your skin texture": saturn_long_choice.skin.skin_texture,
+      "Describe your skin type": saturn_long_choice.skin.skin_texture,
       "Are you allergic to any of the ingredients?":
-        saturn_choice.skin.skin_allergy_to,
+        saturn_long_choice.skin.skin_allergy_to,
+      "Where are the wrinkles on your skin?":
+        saturn_long_choice.skin.wrinkles_location,
+      "Which type of food do you mostly consume?":
+        saturn_long_choice.skin.food_type,
+      "Do you smoke or drink?": saturn_long_choice.skin.smoke_drink,
+      "Do you have acne scars or spots?": saturn_long_choice.skin.acne_scars,
+      "Do you have blackheads/ whiteheads on your skin?":
+        saturn_long_choice.skin.blackheads_whiteheads,
+      "How about your work style?": saturn_long_choice.skin.work_style,
+      "May I know your water intake per day in litres?":
+        saturn_long_choice.skin.water_intake,
+      "What are you concerned about?": saturn_long_choice.skin.skin_concern,
+      "Explain your wrinkles/ ageing pattern?":
+        saturn_long_choice.skin.ageing_pattern,
+      "Do you have any pre-existing problems?": filtered_string2.toString(),
+      "Do you have active pimples/pitted Acne?":
+        saturn_long_choice.skin.pimples_acne,
+      "Are you allergic to any of the ingredients?":
+        saturn_long_choice.skin.skin_allergy_to,
+      "Which type of food do you prefer?":
+        saturn_long_choice.skin.food_preference,
+      "May I know your sleeping pattern?":
+        saturn_long_choice.skin.sleeping_pattern,
+      "What is the frequency of your acne?": saturn_long_choice.skin.acne,
+      "Explain your eating culture": saturn_long_choice.skin.eating_culture,
+      "Describe your skin type": saturn_long_choice.skin.skin_texture,
+      "Did you use any skin products before and were allergic to them?":
+        saturn_long_choice.skin.skin_products,
     },
     // Performance: {
     //   "How is your sexual drive over the last one year?":
@@ -239,36 +294,52 @@ const getSendMailData = (saturn_choice) => {
     answer: "",
   };
 
+  var i = 0;
   for (const key in stateObject[choice]) {
+    var question_number = "question" + i;
+    var answer_number = "answer" + i;
     questionnaire.push({
-      question: key,
-      answer: stateObject[choice][key],
+      [question_number]: key,
+      [answer_number]: stateObject[choice][key],
     });
+    i++;
   }
 
-  if (Object.keys(stateObject[choice].length == 3)) {
-    questionnaire.push(testObj);
-    questionnaire.push(testObj);
+  // var i = 0;
+  // for (let key in questionnaire) {
+  //   questionnaire[key] = "question" + i;
+  //   i++;
+  //   console.log(key, "key after");
+  //   console.log(questionnaire, "qs bef");
+  // }
+
+  while (Object.keys(questionnaire).length != 20) {
+    var question_number = "question" + i;
+    var answer_number = "answer" + i;
+    questionnaire.push({
+      [question_number]: "",
+      [answer_number]: "",
+    });
+    i++;
   }
 
-  if (Object.keys(stateObject[choice].length == 4)) {
-    questionnaire.push(testObj);
-  }
+  console.log(questionnaire, "qs after");
 
   const data = JSON.stringify({
-    firstName: saturn_choice.user_info.first_name,
-    lastName: saturn_choice.user_info.last_name,
-    age: saturn_choice.user_info.age,
-    phone: saturn_choice.user_info.phone_number,
-    email: saturn_choice.user_info.email,
-    consultancy_type: saturn_choice.assessment_type,
-    category: saturn_choice.category,
-    booking: saturn_choice.appointment_type,
+    firstName: saturn_long_choice.user_info.first_name,
+    lastName: saturn_long_choice.user_info.last_name,
+    age: saturn_long_choice.user_info.age,
+    phone: saturn_long_choice.user_info.phone_number,
+    email: saturn_long_choice.user_info.email,
+    consultancy_type: saturn_long_choice.assessment_type,
+    category: saturn_long_choice.category,
+    booking: saturn_long_choice.appointment_type,
     image: "",
     type: "saturn",
     user_survey: questionnaire,
   });
-
+  console.log(data, "mail data");
   return data;
 };
+
 module.exports = { getCategory, getProductId, getSendMailData };
