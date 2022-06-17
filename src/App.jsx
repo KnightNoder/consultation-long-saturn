@@ -84,7 +84,7 @@ function App() {
         "Diabetes": false,
         "Indigestion": false,
         "Heart":false,
-        "Kidney":false
+        "Kidney":true
       },
       "blackheads_whiteheads":"Chin",
       "acne_scars":"Yes",

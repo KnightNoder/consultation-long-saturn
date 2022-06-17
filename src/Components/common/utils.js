@@ -185,9 +185,14 @@ export const getSendMailData = (saturn_long_choice) => {
   });
 
   const keys2 = Object.keys(saturn_long_choice.skin.health_issues);
+
+  console.log(keys2, "keys");
   const filtered_string2 = keys2.filter(function (key) {
-    return saturn_long_choice.weight_management.check_list[key];
+    console.log(saturn_long_choice.skin.health_issues[key], "key value");
+    return saturn_long_choice.skin.health_issues[key];
   });
+
+  console.log(filtered_string2, "string of health issues");
 
   var stateObject = {
     // Hairfall: {
