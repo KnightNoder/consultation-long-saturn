@@ -121,7 +121,7 @@ const SelfAssessmentSection = ({Set_long_short}) => {
                         </div>
                     </div>
                 </div>
-                <div className='start-assessment' onClick={() => { Set_long_short("6 min"); navigate('/choice')}}>
+                <div className='start-assessment' onClick={() => { Set_long_short("6 mins"); navigate('/choice')}}>
                     Start Assessment
                 </div>
             </div>
@@ -166,14 +166,14 @@ const SelfAssessmentSection = ({Set_long_short}) => {
                         <img src={pic} className="small-clock-img" alt=""/>
                     </div>
                     <div className='stopwatch-text'>
-                        6 min
+                        6 mins
                     </div>
                 </div>
             </div>
             <div className='content'>
                 Get a free Doctor’s consultation and Personalized Treatment Plan
             </div>
-            <div className='submit' onClick={ () => { Set_long_short("6 min"); navigate('/choice')}}>
+            <div className='submit' onClick={ () => { Set_long_short("6 mins"); navigate('/choice')}}>
                 Start Assessment
             </div>
         </div>

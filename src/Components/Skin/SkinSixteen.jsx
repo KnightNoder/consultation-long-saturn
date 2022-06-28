@@ -5,7 +5,7 @@ import ImageCard from '../ImageCard';
 import ProgressBarComp from '../../Components/ProgressBarComp';
 
 
-const SkinFour = ({saturn_long_choice,Set_minor_data}) => {
+const SkinFour = ({saturn_long_choice,Set_minor_data,saturn_choice,Set_minor_short_data,assessment_type}) => {
   const [disp,Set_disp] = useState(true);
   
   useEffect(() => {
@@ -35,24 +35,29 @@ const SkinFour = ({saturn_long_choice,Set_minor_data}) => {
             <div className='assessment'>
               <h5>Are you allergic to any of the ingredients? </h5>
               <ChoiceCard show={disp} 
-                clickHandler={()=> Set_minor_data("skin","skin_allergy_to","Vitamin C")} noImage="true"
-                 choice={saturn_long_choice.skin.skin_allergy_to} value="Vitamin C" text="Vitamin C"/>
+                clickHandler={()=> assessment_type == "6 mins" ? Set_minor_data("skin","skin_allergy_to","Vitamin C") : Set_minor_short_data("skin","skin_allergy_to","Vitamin C")} 
+                noImage="true"
+                 choice={assessment_type == "6 mins" ? saturn_long_choice.skin.skin_allergy_to : saturn_choice.skin.skin_allergy_to } value="Vitamin C" text="Vitamin C"/>
               <ChoiceCard show={disp} 
-                clickHandler={()=> Set_minor_data("skin","skin_allergy_to","Salicylic Acid")} noImage="true" 
-                choice={saturn_long_choice.skin.skin_allergy_to} value="Salicylic Acid" text="Salicylic Acid"/>
+                clickHandler={()=> assessment_type == "6 mins" ? Set_minor_data("skin","skin_allergy_to","Salicylic Acid") : Set_minor_short_data("skin","skin_allergy_to","Salicylic Acid")} 
+                noImage="true" 
+                choice={assessment_type == "6 mins" ? saturn_long_choice.skin.skin_allergy_to : saturn_choice.skin.skin_allergy_to } value="Salicylic Acid" text="Salicylic Acid"/>
               <ChoiceCard show={disp} 
-               clickHandler={()=> Set_minor_data("skin","skin_allergy_to","Retinol")} noImage="true" 
-               choice={saturn_long_choice.skin.skin_allergy_to} value="Retinol" text="Retinol"/>
+               clickHandler={()=> assessment_type == "6 mins" ? Set_minor_data("skin","skin_allergy_to","Retinol") : Set_minor_short_data("skin","skin_allergy_to","Retinol")} 
+               noImage="true" 
+               choice={assessment_type == "6 mins" ? saturn_long_choice.skin.skin_allergy_to : saturn_choice.skin.skin_allergy_to } value="Retinol" text="Retinol"/>
               <ChoiceCard show={disp} 
-               clickHandler={()=> Set_minor_data("skin","skin_allergy_to","Kojic Acid")} noImage="true" 
-               choice={saturn_long_choice.skin.skin_allergy_to} value="Kojic Acid" text="Kojic Acid"/>
+               clickHandler={()=> assessment_type == "6 mins" ? Set_minor_data("skin","skin_allergy_to","Kojic Acid") : Set_minor_short_data("skin","skin_allergy_to","Kojic Acid")} 
+               noImage="true" 
+               choice={assessment_type == "6 mins" ? saturn_long_choice.skin.skin_allergy_to : saturn_choice.skin.skin_allergy_to } value="Kojic Acid" text="Kojic Acid"/>
                <ChoiceCard show={disp} 
-               clickHandler={()=> Set_minor_data("skin","skin_allergy_to","None")} noImage="true" 
-               choice={saturn_long_choice.skin.skin_allergy_to} value="None" text="None"/>
+               clickHandler={()=> assessment_type == "6 mins" ? Set_minor_data("skin","skin_allergy_to","None") : Set_minor_short_data("skin","skin_allergy_to","None")} 
+               noImage="true" 
+               choice={assessment_type == "6 mins" ? saturn_long_choice.skin.skin_allergy_to : saturn_choice.skin.skin_allergy_to } value="None" text="None"/>
             </div>
             
         </div>
-        <ProceedTemplate text="Proceed" conditionMet="true" choice={"skin-16"} backLink="skin-14"/>
+        <ProceedTemplate text="Proceed" conditionMet="true" choice={ assessment_type == "6 mins" ? "skin-16" : "appointment"} backLink={assessment_type == "6 mins" ? "skin-14" : "skin-1"}/>
     </>
   )
 }

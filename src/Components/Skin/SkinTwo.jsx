@@ -4,15 +4,19 @@ import { useState,useEffect } from 'react';
 import ImageCard from '../ImageCard';
 import ProgressBarComp from '../../Components/ProgressBarComp';
 
-const SkinTwo = ({saturn_long_choice,Set_minor_data}) => {
+const SkinTwo = ({saturn_long_choice,Set_minor_data,saturn_choice,
+  Set_minor_short_data,assessment_type}) => {
   const [disp,Set_disp] = useState(false);
+  const [front_link,Set_front_link] = useState("")
   useEffect(() => {
     window.scrollTo(0,0);
     setTimeout(() => {
       Set_disp(false)
     }, 5000);
+    assessment_type == "6 mins" ? Set_front_link("skin-2") : Set_front_link("skin-15")
   }, []);
   
+  console.log(assessment_type,'assessment_type');
   return (
     <>
         <div className={`${disp ? "show-overlay-screen" : "hide-overlay-screen"}`}>
@@ -33,14 +37,18 @@ const SkinTwo = ({saturn_long_choice,Set_minor_data}) => {
             <div className='assessment'>
               <h5>Describe your skin type</h5>
               <ChoiceCard show={disp} 
-                clickHandler={() => Set_minor_data("skin","skin_texture","Oily")} noImage="true" choice={saturn_long_choice.skin.skin_texture} value="Oily" text="Oily"/>
+                clickHandler={() => {assessment_type == "6 mins" ? Set_minor_data("skin","skin_texture","Oily") : Set_minor_short_data("skin","skin_texture","Oily") ; 
+              console.log('hello') }}
+                 noImage="true" choice={assessment_type == "6 mins" ? saturn_long_choice.skin.skin_texture : saturn_choice.skin.skin_texture} value="Oily" text="Oily"/>
               <ChoiceCard show={disp} 
-                clickHandler={() => Set_minor_data("skin","skin_texture","Dry")} noImage="true" choice={saturn_long_choice.skin.skin_texture}  value="Dry" text="Dry"/>
+                clickHandler={() => {assessment_type == "6 mins" ? Set_minor_data("skin","skin_texture","Dry") : Set_minor_short_data("skin","skin_texture","Dry")} }
+                noImage="true" choice={assessment_type == "6 mins" ? saturn_long_choice.skin.skin_texture : saturn_choice.skin.skin_texture}  value="Dry" text="Dry"/>
               <ChoiceCard show={disp} 
-               clickHandler={() => Set_minor_data("skin","skin_texture","Normal")} noImage="true" choice={saturn_long_choice.skin.skin_texture}  value="Normal" text="Normal "/>
+               clickHandler={() => {assessment_type == "6 mins" ? Set_minor_data("skin","skin_texture","Normal") : Set_minor_short_data("skin","skin_texture","Normal")} }
+               noImage="true" choice={assessment_type == "6 mins" ? saturn_long_choice.skin.skin_texture : saturn_choice.skin.skin_texture }  value="Normal" text="Normal "/>
             </div>
         </div>
-        <ProceedTemplate conditionMet="true" text="Proceed" choice={"skin-2"} backLink="skin"/>
+        <ProceedTemplate conditionMet="true" text="Proceed" choice={assessment_type == "6 mins" ? ("skin-2") : ("skin-15")} backLink="skin"/>
     </>
   )
 }

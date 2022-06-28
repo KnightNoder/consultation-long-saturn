@@ -20,6 +20,8 @@ const BasicInfo = ({saturn_long_choice,Set_minor_data,saturn_choice,Set_minor_sh
     SetVibrate(true)
   }
 
+  console.log(saturn_long_choice.user_info ,'validity check' )
+
   const numberCheck = (e)  => {
             var key;
             var keychar;
@@ -73,19 +75,19 @@ const BasicInfo = ({saturn_long_choice,Set_minor_data,saturn_choice,Set_minor_sh
             </div>  
             <div className='assessment'>
               <h5>Fill up the details below :</h5>
-              <InputCard heading="First Name" placeholder="Eg. John" name="first_name" onchange={(e) => { assessment_type="30 sec" ? 
+              <InputCard heading="First Name" placeholder="Eg. John" name="first_name" onchange={(e) => { assessment_type == "30 sec" ? 
                Set_minor_short_data("user_info","first_name",e.target.value): Set_minor_data("user_info","first_name",e.target.value); 
                SetVibrateFirstName(false)}}
-              value={assessment_type="30 sec" ? saturn_choice.user_info.first_name: saturn_long_choice.user_info.first_name} 
+              value={assessment_type == "30 sec" ? saturn_choice.user_info.first_name: saturn_long_choice.user_info.first_name} 
               vibrate={vibrate_first_name} errorText="Invalid input" requiredErrorText="Please provide name to proceed" required="*" 
-               validity={assessment_type="30 sec" ? saturn_choice.user_info.first_name: saturn_long_choice.user_info.first_name}/>
+               validity={assessment_type =="30 sec" ? saturn_choice.user_info.first_name: saturn_long_choice.user_info.first_name}/>
               <br />
 
               <InputCard heading="Last Name" placeholder="Eg. Doe" value={
-                assessment_type="30 sec" ? saturn_choice.user_info.last_name: saturn_long_choice.user_info.last_name
+                assessment_type =="30 sec" ? saturn_choice.user_info.last_name: saturn_long_choice.user_info.last_name
               } 
               onchange={(e) => { 
-                assessment_type="30 sec" ? 
+                assessment_type =="30 sec" ? 
                 Set_minor_short_data("user_info","last_name",e.target.value): Set_minor_data("user_info","last_name",e.target.value); 
               }
             }
@@ -93,37 +95,37 @@ const BasicInfo = ({saturn_long_choice,Set_minor_data,saturn_choice,Set_minor_sh
               <br />
 
               <InputCard heading="Phone Number"  placeholder="Eg. 9876543210" name="phone_number" value={
-                assessment_type="30 sec" ? saturn_choice.user_info.phone_number: saturn_long_choice.user_info.phone_number
+                assessment_type == "30 sec" ? saturn_choice.user_info.phone_number : saturn_long_choice.user_info.phone_number
               }
-              inputMode="numeric" validity={assessment_type="30 sec" ? (saturn_choice.user_info.phone_number == 10): (saturn_long_choice.user_info.phone_number == 10)} 
+              inputMode="numeric" validity={assessment_type == "30 sec" ? (saturn_choice.user_info.phone_number.length == 10): (saturn_long_choice.user_info.phone_number.length == 10)} 
               numberCheck={numberCheck}
               onchange={(e) => {
-                assessment_type="30 sec" ? 
+                assessment_type =="30 sec" ? 
                 Set_minor_short_data("user_info","phone_number",e.target.value): Set_minor_data("user_info","phone_number",e.target.value); 
                 SetVibratePhone(false)}} errorText="Invalid input" requiredErrorText="Please provide valid phone number to proceed" 
                required="*" vibrate={vibrate_phone}/>
               <br />
 
               <InputCard heading="Email" placeholder="Eg. johndoe@ghc.health" value={
-                assessment_type="30 sec" ? saturn_choice.user_info.email: saturn_long_choice.user_info.email
+                assessment_type =="30 sec" ? saturn_choice.user_info.email: saturn_long_choice.user_info.email
               } 
-              validity={assessment_type="30 sec" ? saturn_choice.user_info.email.includes('@') : saturn_long_choice.user_info.email.includes('@')}
+              validity={assessment_type =="30 sec" ? saturn_choice.user_info.email.includes('@') : saturn_long_choice.user_info.email.includes('@')}
               onchange={(e) => {
-                assessment_type="30 sec" ? 
+                assessment_type =="30 sec" ? 
                 Set_minor_short_data("user_info","email",e.target.value): Set_minor_data("user_info","email",e.target.value); 
                 SetVibrateEmail(false)}} errorText="Invalid input"
                requiredErrorText="Please provide valid email to proceed" required="*" vibrate={vibrate_email}/>
               <br />
 
               <InputCard heading="Age" placeholder="Eg. 24" value={
-                assessment_type="30 sec" ? saturn_choice.user_info.age: saturn_long_choice.user_info.age
+                assessment_type =="30 sec" ? saturn_choice.user_info.age: saturn_long_choice.user_info.age
               } 
               validity={
-                assessment_type="30 sec" ? (saturn_long_choice.user_info.age && saturn_long_choice.user_info.age <= 149) :
+                assessment_type =="30 sec" ? (saturn_long_choice.user_info.age && saturn_long_choice.user_info.age <= 149) :
                 (saturn_choice.user_info.age && saturn_choice.user_info.age <= 149)
               } inputMode="numeric" numberCheck={numberCheck}
               onchange={(e) => {
-                assessment_type="30 sec" ? 
+                assessment_type =="30 sec" ? 
                 Set_minor_short_data("user_info","age",e.target.value): Set_minor_data("user_info","age",e.target.value);
                 SetVibrate(false)}
               } errorText="Invalid input"
@@ -131,9 +133,9 @@ const BasicInfo = ({saturn_long_choice,Set_minor_data,saturn_choice,Set_minor_sh
               <br />
             </div>
         </div>
-        <ProceedTemplate  vibrate={false} vibrateText={vibrateText} text="Proceed" choice={assessment_type="30 sec" ? saturn_choice.category : saturn_long_choice.category} backLink="choice" 
+        <ProceedTemplate  vibrate={false} vibrateText={vibrateText} text="Proceed" choice={assessment_type =="30 sec" ? saturn_choice.category : saturn_long_choice.category} backLink="choice" 
         conditionMet={
-          assessment_type="6 min" ?
+          assessment_type =="6 mins" ?
           (saturn_long_choice.user_info.first_name && saturn_long_choice.user_info.email.includes('@') && (saturn_long_choice.user_info.phone_number.length == 10 && /^[0-9]+$/.test(saturn_long_choice.user_info.phone_number))
         && (saturn_long_choice.user_info.age && saturn_long_choice.user_info.age <= 149) ) :
         saturn_choice.user_info.first_name && saturn_choice.user_info.email.includes('@') && (saturn_choice.user_info.phone_number.length == 10 && /^[0-9]+$/.test(saturn_choice.user_info.phone_number))

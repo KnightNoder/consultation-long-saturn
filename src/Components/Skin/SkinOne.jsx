@@ -4,7 +4,7 @@ import {useState,useEffect } from 'react';
 import ImageCard from '../ImageCard';
 import ProgressBarComp from '../../Components/ProgressBarComp';
 
-const SkinOne = ({saturn_long_choice,Set_minor_data}) => {
+const SkinOne = ({saturn_long_choice,Set_minor_data,saturn_choice,Set_minor_short_data,assessment_type}) => {
   const [disp,Set_disp] = useState(true);
 
   useEffect(() => {
@@ -35,19 +35,28 @@ const SkinOne = ({saturn_long_choice,Set_minor_data}) => {
               <h5>What are you concerned about?</h5>
               <div className='scroll-div'>
                 <ChoiceCard show={disp}
-                  clickHandler={() => Set_minor_data("skin","skin_concern","Open pores")} noImage="true" choice={saturn_long_choice.skin.skin_concern} value="Open pores" text="Open pores"/>
+                  clickHandler={() => { assessment_type == "6 mins" ? Set_minor_data("skin","skin_concern","Open pores") : Set_minor_short_data("skin","skin_concern","Open pores") }} noImage="true" 
+                  choice={assessment_type == "6 mins" ? saturn_long_choice.skin.skin_concern : saturn_choice.skin.skin_concern } 
+                  value="Open pores" text="Open pores"/>
                 <ChoiceCard show={disp}
-                  clickHandler={() => Set_minor_data("skin","skin_concern","Pigmentation")} noImage="true" choice={saturn_long_choice.skin.skin_concern} value="Pigmentation"  text="Pigmentation"/>
+                  clickHandler={() => assessment_type == "6 mins" ? Set_minor_data("skin","skin_concern","Pigmentation") : Set_minor_short_data("skin","skin_concern","Pigmentation")} 
+                  noImage="true" 
+                  choice={assessment_type == "6 mins" ? saturn_long_choice.skin.skin_concern : saturn_choice.skin.skin_concern} value="Pigmentation"  text="Pigmentation"/>
                 <ChoiceCard show={disp}
-                clickHandler={() => Set_minor_data("skin","skin_concern","Active Acne")} noImage="true" choice={saturn_long_choice.skin.skin_concern} value="Active Acne" text="Acne"/>
+                clickHandler={() => assessment_type == "6 mins" ? Set_minor_data("skin","skin_concern","Active Acne") : Set_minor_short_data("skin","skin_concern","Active Acne")} noImage="true" 
+                choice={assessment_type == "6 mins" ? saturn_long_choice.skin.skin_concern : saturn_choice.skin.skin_concern} value="Active Acne" text="Acne"/>
                 <ChoiceCard show={disp}
-                clickHandler={() => Set_minor_data("skin","skin_concern","Aging")} noImage="true" choice={saturn_long_choice.skin.skin_concern} value="Aging" text="Aging"/>
+                clickHandler={() => assessment_type == "6 mins" ? Set_minor_data("skin","skin_concern","Aging") : Set_minor_short_data("skin","skin_concern","Aging")} noImage="true" 
+                choice={assessment_type == "6 mins" ? saturn_long_choice.skin.skin_concern : saturn_choice.skin.skin_concern} value="Aging" text="Aging"/>
                 <ChoiceCard show={disp}
-                clickHandler={() => Set_minor_data("skin","skin_concern","Dark circles")} noImage="true" choice={saturn_long_choice.skin.skin_concern} value="Dark circles" text="Dark circles"/>
+                clickHandler={() => assessment_type == "6 mins" ? Set_minor_data("skin","skin_concern","Dark circles") : Set_minor_short_data("skin","skin_concern","Dark circles")} noImage="true" 
+                choice={assessment_type == "6 mins" ? saturn_long_choice.skin.skin_concern : saturn_choice.skin.skin_concern} value="Dark circles" text="Dark circles"/>
                 <ChoiceCard show={disp}
-                clickHandler={() => Set_minor_data("skin","skin_concern","Acne marks & spots")} noImage="true" choice={saturn_long_choice.skin.skin_concern} value="Acne marks & spots"  text="Spots & marks"/>
+                clickHandler={() => assessment_type == "6 mins" ? Set_minor_data("skin","skin_concern","Acne marks & spots") : Set_minor_short_data("skin","skin_concern","Acne marks & spots")} noImage="true" 
+                choice={assessment_type == "6 mins" ? saturn_long_choice.skin.skin_concern : saturn_choice.skin.skin_concern} value="Acne marks & spots"  text="Spots & marks"/>
                 <ChoiceCard show={disp}
-                clickHandler={() => Set_minor_data("skin","skin_concern","Dull Skin")} noImage="true" choice={saturn_long_choice.skin.skin_concern} value="Dull Skin" text="Dull skin (general skincare)"/>
+                clickHandler={() => assessment_type == "6 mins" ? Set_minor_data("skin","skin_concern","Dull Skin") : Set_minor_short_data("skin","skin_concern","Dull Skin")} noImage="true" 
+                choice={assessment_type == "6 mins" ? saturn_long_choice.skin.skin_concern : saturn_choice.skin.skin_concern} value="Dull Skin" text="Dull skin (general skincare)"/>
               </div>
             </div>
         </div>
