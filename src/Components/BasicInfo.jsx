@@ -5,7 +5,7 @@ import '../css/BasicInfo.css'
 import ImageCard from './ImageCard'
 import { useState,useEffect } from 'react';
 
-const BasicInfo = ({saturn_long_choice,Set_minor_data}) => {
+const BasicInfo = ({saturn_long_choice,Set_minor_data,saturn_choice,Set_minor_short_data,assessment_type}) => {
   const [vibrate_first_name,SetVibrateFirstName] = useState(false);
   const [vibrate_phone,SetVibratePhone] = useState(false);
   const [vibrate_email,SetVibrateEmail] = useState(false);
@@ -51,6 +51,12 @@ const BasicInfo = ({saturn_long_choice,Set_minor_data}) => {
     Set_minor_data("user_info","email","")
     Set_minor_data("user_info","phone_number","")
     Set_minor_data("user_info","age","")
+
+    Set_minor_short_data("user_info","first_name","")
+    Set_minor_short_data("user_info","last_name","")
+    Set_minor_short_data("user_info","email","")
+    Set_minor_short_data("user_info","phone_number","")
+    Set_minor_short_data("user_info","age","")
     setTimeout(() => {
       Set_disp(false)
     }, 3000);
@@ -67,33 +73,72 @@ const BasicInfo = ({saturn_long_choice,Set_minor_data}) => {
             </div>  
             <div className='assessment'>
               <h5>Fill up the details below :</h5>
-              <InputCard heading="First Name" placeholder="Eg. John" name="first_name" onchange={(e) => {Set_minor_data("user_info","first_name",e.target.value); SetVibrateFirstName(false)}}
-              value={saturn_long_choice.user_info.first_name} vibrate={vibrate_first_name} errorText="Invalid input" requiredErrorText="Please provide name to proceed" required="*" 
-               validity={saturn_long_choice.user_info.first_name}/>
+              <InputCard heading="First Name" placeholder="Eg. John" name="first_name" onchange={(e) => { assessment_type="30 sec" ? 
+               Set_minor_short_data("user_info","first_name",e.target.value): Set_minor_data("user_info","first_name",e.target.value); 
+               SetVibrateFirstName(false)}}
+              value={assessment_type="30 sec" ? saturn_choice.user_info.first_name: saturn_long_choice.user_info.first_name} 
+              vibrate={vibrate_first_name} errorText="Invalid input" requiredErrorText="Please provide name to proceed" required="*" 
+               validity={assessment_type="30 sec" ? saturn_choice.user_info.first_name: saturn_long_choice.user_info.first_name}/>
               <br />
-              <InputCard heading="Last Name" placeholder="Eg. Doe" value={saturn_long_choice.user_info.last_name} onchange={(e) => Set_minor_data("user_info","last_name",e.target.value)}
+
+              <InputCard heading="Last Name" placeholder="Eg. Doe" value={
+                assessment_type="30 sec" ? saturn_choice.user_info.last_name: saturn_long_choice.user_info.last_name
+              } 
+              onchange={(e) => { 
+                assessment_type="30 sec" ? 
+                Set_minor_short_data("user_info","last_name",e.target.value): Set_minor_data("user_info","last_name",e.target.value); 
+              }
+            }
               errorText="Invalid input" vibrate={true} validity={true} />
               <br />
-              <InputCard heading="Phone Number"  placeholder="Eg. 9876543210" name="phone_number" value={saturn_long_choice.user_info.phone_number}
-              inputMode="numeric" validity={saturn_long_choice.user_info.phone_number.length == 10} numberCheck={numberCheck}
-              onchange={(e) => {Set_minor_data("user_info","phone_number",e.target.value);SetVibratePhone(false)}} errorText="Invalid input" requiredErrorText="Please provide valid phone number to proceed" 
+
+              <InputCard heading="Phone Number"  placeholder="Eg. 9876543210" name="phone_number" value={
+                assessment_type="30 sec" ? saturn_choice.user_info.phone_number: saturn_long_choice.user_info.phone_number
+              }
+              inputMode="numeric" validity={assessment_type="30 sec" ? (saturn_choice.user_info.phone_number == 10): (saturn_long_choice.user_info.phone_number == 10)} 
+              numberCheck={numberCheck}
+              onchange={(e) => {
+                assessment_type="30 sec" ? 
+                Set_minor_short_data("user_info","phone_number",e.target.value): Set_minor_data("user_info","phone_number",e.target.value); 
+                SetVibratePhone(false)}} errorText="Invalid input" requiredErrorText="Please provide valid phone number to proceed" 
                required="*" vibrate={vibrate_phone}/>
               <br />
-              <InputCard heading="Email" placeholder="Eg. johndoe@ghc.health" value={saturn_long_choice.user_info.email} 
-              validity={saturn_long_choice.user_info.email.includes('@')}
-              onchange={(e) => {Set_minor_data("user_info","email",e.target.value);SetVibrateEmail(false)}} errorText="Invalid input"
+
+              <InputCard heading="Email" placeholder="Eg. johndoe@ghc.health" value={
+                assessment_type="30 sec" ? saturn_choice.user_info.email: saturn_long_choice.user_info.email
+              } 
+              validity={assessment_type="30 sec" ? saturn_choice.user_info.email.includes('@') : saturn_long_choice.user_info.email.includes('@')}
+              onchange={(e) => {
+                assessment_type="30 sec" ? 
+                Set_minor_short_data("user_info","email",e.target.value): Set_minor_data("user_info","email",e.target.value); 
+                SetVibrateEmail(false)}} errorText="Invalid input"
                requiredErrorText="Please provide valid email to proceed" required="*" vibrate={vibrate_email}/>
               <br />
-              <InputCard heading="Age" placeholder="Eg. 24" value={saturn_long_choice.user_info.age} 
-              validity={saturn_long_choice.user_info.age && saturn_long_choice.user_info.age <= 149} inputMode="numeric" numberCheck={numberCheck}
-              onchange={(e) => {Set_minor_data("user_info","age",e.target.value);SetVibrate(false)}} errorText="Invalid input"
+
+              <InputCard heading="Age" placeholder="Eg. 24" value={
+                assessment_type="30 sec" ? saturn_choice.user_info.age: saturn_long_choice.user_info.age
+              } 
+              validity={
+                assessment_type="30 sec" ? (saturn_long_choice.user_info.age && saturn_long_choice.user_info.age <= 149) :
+                (saturn_choice.user_info.age && saturn_choice.user_info.age <= 149)
+              } inputMode="numeric" numberCheck={numberCheck}
+              onchange={(e) => {
+                assessment_type="30 sec" ? 
+                Set_minor_short_data("user_info","age",e.target.value): Set_minor_data("user_info","age",e.target.value);
+                SetVibrate(false)}
+              } errorText="Invalid input"
                requiredErrorText="Please provide valid age to proceed" required="*" vibrate={vibrate}/>
               <br />
             </div>
         </div>
-        <ProceedTemplate  vibrate={false} vibrateText={vibrateText} text="Proceed" choice={saturn_long_choice.category} backLink="choice" 
-        conditionMet={saturn_long_choice.user_info.first_name && saturn_long_choice.user_info.email.includes('@') && (saturn_long_choice.user_info.phone_number.length == 10 && /^[0-9]+$/.test(saturn_long_choice.user_info.phone_number))
-        && (saturn_long_choice.user_info.age && saturn_long_choice.user_info.age <= 149)}
+        <ProceedTemplate  vibrate={false} vibrateText={vibrateText} text="Proceed" choice={assessment_type="30 sec" ? saturn_choice.category : saturn_long_choice.category} backLink="choice" 
+        conditionMet={
+          assessment_type="6 min" ?
+          (saturn_long_choice.user_info.first_name && saturn_long_choice.user_info.email.includes('@') && (saturn_long_choice.user_info.phone_number.length == 10 && /^[0-9]+$/.test(saturn_long_choice.user_info.phone_number))
+        && (saturn_long_choice.user_info.age && saturn_long_choice.user_info.age <= 149) ) :
+        saturn_choice.user_info.first_name && saturn_choice.user_info.email.includes('@') && (saturn_choice.user_info.phone_number.length == 10 && /^[0-9]+$/.test(saturn_choice.user_info.phone_number))
+        && (saturn_choice.user_info.age && saturn_choice.user_info.age <= 149) 
+      }
         /> 
     </>
   )

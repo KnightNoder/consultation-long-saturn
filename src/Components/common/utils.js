@@ -176,7 +176,7 @@ export const getProductId = (saturn_long_choice) => {
   }
 };
 
-export const getSendMailData = (saturn_long_choice) => {
+export const getSendMailData = (saturn_long_choice, assessment_type) => {
   const choice = saturn_long_choice.category;
   const keys = Object.keys(saturn_long_choice.weight_management.check_list);
 
@@ -186,7 +186,6 @@ export const getSendMailData = (saturn_long_choice) => {
 
   const keys2 = Object.keys(saturn_long_choice.skin.health_issues);
 
-  console.log(keys2, "keys");
   const filtered_string2 = keys2.filter(function (key) {
     console.log(saturn_long_choice.skin.health_issues[key], "key value");
     return saturn_long_choice.skin.health_issues[key];
@@ -336,14 +335,13 @@ export const getSendMailData = (saturn_long_choice) => {
     age: saturn_long_choice.user_info.age,
     phone: saturn_long_choice.user_info.phone_number,
     email: saturn_long_choice.user_info.email,
-    consultancy_type: saturn_long_choice.assessment_type,
+    consultancy_type: assessment_type,
     category: saturn_long_choice.category,
     booking: saturn_long_choice.appointment_type,
     image: "",
     type: "saturn",
     user_survey: questionnaire,
   });
-  console.log(data, "mail data");
   return data;
 };
 

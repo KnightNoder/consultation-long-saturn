@@ -13,7 +13,7 @@ const WeightLossTwo = ({saturn_long_choice,Set_minor_data}) => {
     window.scrollTo(0, 0);
     setTimeout(() => {
       Set_disp(false)
-    }, 3000);
+    }, 5000);
   }, [])
 
   return (

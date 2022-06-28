@@ -9,7 +9,7 @@ import '../css/ProceedTemplate.css'
 const {getCategory,getProductId,getSendMailData} = require('./common/utils')
 const axios = require('axios');
 
-const Callback = ({saturn_long_choice}) => {
+const Callback = ({saturn_long_choice,assessment_type}) => {
     const [image_1,Set_image_1] =  useState('');
     const [price_1,Set_price_1] = useState('');
     const [compare_at_price_1,Set_compare_at_price_1] = useState('')
@@ -92,7 +92,7 @@ const Callback = ({saturn_long_choice}) => {
 
     getData();
 
-    const data = getSendMailData(saturn_long_choice);
+    const data = getSendMailData(saturn_long_choice,assessment_type);
     const sendMail = async () => {
         const config = {
             method: 'post',
@@ -236,13 +236,6 @@ const Callback = ({saturn_long_choice}) => {
                 <div className="proceed-container">
                     <div className='proceed-button'>
                         <GenericButton text="BUY NOW"  productNavigate="true" productLink={product_link_1}/>
-                    </div>
-                </div>
-            </div>
-            <div className="product-checkout">
-                <div className="proceed-container">
-                    <div className='proceed-button'>
-                        <GenericButton text="BUY NOW"  productNavigate="true" productLink={product_link_2}/>
                     </div>
                 </div>
             </div>

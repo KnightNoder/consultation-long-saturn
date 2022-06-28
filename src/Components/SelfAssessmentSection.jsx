@@ -5,7 +5,7 @@ import pic2 from '../images/60-sec-small.png'
 import pic3 from '../images/green-tick.png'
 import '../css/SelfAssessmentSection.css'
 
-const SelfAssessmentSection = ({Set_data}) => {
+const SelfAssessmentSection = ({Set_long_short}) => {
   const navigate = useNavigate();
   return (
     <>
@@ -38,7 +38,7 @@ const SelfAssessmentSection = ({Set_data}) => {
                             <img src={pic} alt=""/>
                         </div>
                         <div className='stopwatch-text'>
-                            6 min
+                            30 sec
                         </div>
                     </div>
                 </div>
@@ -52,7 +52,7 @@ const SelfAssessmentSection = ({Set_data}) => {
                                 <img src={pic3} alt="" />
                             </div>
                             <div className='report-text-content'>
-                                Get your FREE analysis and book an appointment in 6 min
+                                Get your FREE analysis and book an appointment in 30 sec
                             </div>
                         </div>
                         <div className='report-text'>
@@ -75,18 +75,18 @@ const SelfAssessmentSection = ({Set_data}) => {
                         </div>
                     </div>
                 </div>
-                <div className='start-assessment' onClick={() => {Set_data("assessment_type","30sec"); navigate('/choice')}}>
+                <div className='start-assessment' onClick={() => {Set_long_short("30 sec"); navigate('/choice')}}>
                     Start Assessment
                 </div>
             </div> 
-            {/* <div className='assessment-card'>
+            <div className='assessment-card'>
                 <div className='time-section'>
                     <div className='stopwatch'>
                         <div className='clock'>
                             <img src={pic2} alt=""/>
                         </div>
                         <div className='stopwatch-text'>
-                            6 Mins
+                            6 mins
                         </div>
                     </div>
                 </div>
@@ -121,10 +121,10 @@ const SelfAssessmentSection = ({Set_data}) => {
                         </div>
                     </div>
                 </div>
-                <div className='start-assessment' onClick={() => navigate('/choice')}>
+                <div className='start-assessment' onClick={() => { Set_long_short("6 min"); navigate('/choice')}}>
                     Start Assessment
                 </div>
-            </div> */}
+            </div>
         </div>
     </div>  
 
@@ -152,29 +152,31 @@ const SelfAssessmentSection = ({Set_data}) => {
             <div className='content'>
                 Get recommended products that suit your concerns
             </div>
-            <div className='submit' onClick={() =>{ Set_data("assessment_type","30sec"); navigate('/choice')}}>
+            <div className='submit' onClick={() =>{ Set_long_short("30 sec"); navigate('/choice')}}>
                 Start Assessment
             </div>
         </div>
-        {/* <div className='assessment-card-small'>
-            <div className='bottom-heading'>
+        <div className='assessment-card-small'>
+            <div className='top-heading'>
                 <div className='heading'>
                     Detailed Self Assessment
                 </div>
                 <div className='small-stopwatch'>
-                   
+                    <div className='small-clock'>
+                        <img src={pic} className="small-clock-img" alt=""/>
+                    </div>
+                    <div className='stopwatch-text'>
+                        6 min
+                    </div>
                 </div>
-            <div className='clock'>
-
-            </div>
             </div>
             <div className='content'>
                 Get a free Doctor’s consultation and Personalized Treatment Plan
             </div>
-            <div className='submit' onClick={() => navigate('/choice')}>
+            <div className='submit' onClick={ () => { Set_long_short("6 min"); navigate('/choice')}}>
                 Start Assessment
             </div>
-        </div> */}
+        </div>
     </div>
     </>
   )

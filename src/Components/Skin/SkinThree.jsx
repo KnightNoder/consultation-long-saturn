@@ -33,7 +33,7 @@ const SkinOne = ({saturn_long_choice,Set_minor_data}) => {
                 <ChoiceCard show={disp}
                   clickHandler={() => Set_minor_data("skin","acne","Once in a month or 2 months")} noImage="true" choice={saturn_long_choice.skin.acne} value="Once in a month or 2 months"  text="Once in a month or 2 months"/>
                 <ChoiceCard show={disp}
-                clickHandler={() => Set_minor_data("skin","acne","Always have acne")} noImage="true" choice={saturn_long_choice.skin.acne} value="Always have acne" text="Acne"/>
+                clickHandler={() => Set_minor_data("skin","acne","Always have acne")} noImage="true" choice={saturn_long_choice.skin.acne} value="Always have acne" text="Always have acne"/>
                 <ChoiceCard show={disp}
                 clickHandler={() => Set_minor_data("skin","acne","Very rarely")} noImage="true" choice={saturn_long_choice.skin.acne} value="Very rarely" text="Very rarely"/>
                 <ChoiceCard show={disp}

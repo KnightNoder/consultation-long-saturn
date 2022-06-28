@@ -10,7 +10,8 @@ import '../css/ChoiceCard.css'
 import ImageCard from './ImageCard'
 import { useState, useEffect } from 'react';  
 
-const ChoicePage = ({saturn_long_choice,Set_data,Set_minor_data}) => {
+const ChoicePage = ({saturn_long_choice,Set_data,Set_minor_data,
+  saturn_choice,Set_short_data,Set_minor_short_data,assessment_type}) => {
 
   const [vibrate,SetVibrate] = useState(false);
   const [age_valid,Set_age_valid]= useState(false);
@@ -23,19 +24,8 @@ const ChoicePage = ({saturn_long_choice,Set_data,Set_minor_data}) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     Set_minor_data("user_info","age","")
+    Set_minor_short_data("user_info","age","")
   }, [])
-  
-  // useEffect(() => {
-  //   SetAge(age)
-  //   window.localStorage.setItem('choice',selected);
-  //   window.localStorage.setItem('age',age);
-  //   SetVibrate(false);
-  //   if (/^\d+$/.test(age) &&  parseInt(age) <= 12) {
-  //     Set_age_valid(true)
-  //   } else {
-  //     Set_age_valid(false)
-  //   }
-  // }, [selected,age]);
 
 
   return (
@@ -47,17 +37,15 @@ const ChoicePage = ({saturn_long_choice,Set_data,Set_minor_data}) => {
             <div className='assessment'>
               <h5>FREE online consultation starts here:</h5>
               <h4 className='subtext'>Tell us what we can help you with</h4>
-              {/* <ChoiceCard 
-                clickHandler={handleClick} choice={selected} noImage="true" image={hairfallImage} text="Hairfall"/>
               <ChoiceCard 
-                clickHandler={handleClick} choice={selected} noImage="true" image={beardImage} text="Beard"/>
-              <ChoiceCard 
-               clickHandler={handleClick} choice={selected} noImage="true" image={performanceImage} text="Performance"/> */}
-              <ChoiceCard 
-               clickHandler={() => Set_data("category","weight-management")} choice={saturn_long_choice.category} noImage="true" image={weightlossImage} text="Weight Management" 
+               clickHandler={() => 
+                assessment_type == '30 sec' ?  Set_short_data("category","weight-management") : Set_data("category","weight-management")
+              } choice={ assessment_type == '30 sec' ? saturn_choice.category : saturn_long_choice.category} noImage="true" image={weightlossImage} text="Weight Management" 
                value="weight-management"/>
               <ChoiceCard 
-               clickHandler={() => Set_data("category","skin")} choice={saturn_long_choice.category} noImage="true" image={skinImage} text="Skin Health"
+               clickHandler={() => 
+                assessment_type == '30 sec' ?  Set_short_data("category","skin") : Set_data("category","skin")
+              } choice={assessment_type == '30 sec' ? saturn_choice.category : saturn_long_choice.category} noImage="true" image={skinImage} text="Skin Health"
                value="skin"/>
             </div>
         </div>

@@ -54,7 +54,6 @@ import BasicInfo from './Components/BasicInfo';
 
 function App() {
   let [saturn_long_choice,Set_saturn_long_choice] = useState(JSON.parse(window.localStorage.getItem('saturn_long_choice')) || {
-    "assessment_type":"6min",
     "category":"skin",
     "user_info":{
       "first_name":"",
@@ -121,14 +120,70 @@ function App() {
     "appointment_type":"FREE Consultation call"
   })
 
+
+  let [saturn_choice,Set_saturn_choice] = useState(JSON.parse(window.localStorage.getItem('saturn_choice')) || {
+    "category":"skin",
+    "user_info":{
+      "first_name":"",
+      "last_name":"",
+      "email":"",
+      "phone_number":"",
+      "age":"",
+      "height":"",
+      "weight":""
+    },
+    "skin":{
+      "skin_concern":"Open pores",
+      "skin_texture":"Oily",
+      "skin_type":"Normal",
+      "skin_allergy_to":"Vitamin C",
+    },
+    "weight_management":{
+      "meals_a_day":"Greater than 6 times",
+      "exercise_a_week":"Daily",
+      "check_list":{
+        "Cholestrol": true,
+        "Thyroid":false,
+        "Heart":false,
+        "Diabetes": false,
+        "Kidney":false,
+        "No_such_problems": false,
+        "Others": false,
+        "Others_input":""
+      }
+    },
+    "appointment_type":"FREE Consultation call"
+  })
+  
+  const [assessment_type,Set_assessment_type] = useState(window.localStorage.getItem("assessment_type") || "30 sec");
+
 const Set_data = (item,val) => {
   Set_saturn_long_choice((prevState)=>{
     return {...prevState,[item]: val}
   })
 }
 
+const Set_long_short = (type) => {
+  Set_assessment_type(type);
+}
+
+const Set_short_data = (item,val) => {
+  Set_saturn_choice((prevState)=>{
+    return {...prevState,[item]: val}
+  })
+}
+
 const Set_minor_data = (minor_key,item,val) => {
   Set_saturn_long_choice((state)=>{
+    return {...state,[minor_key]:{
+      ...state[minor_key],
+      [item]: val
+    }}
+  })
+}
+
+const Set_minor_short_data = (minor_key,item,val) => {
+  Set_saturn_choice((state)=>{
     return {...state,[minor_key]:{
       ...state[minor_key],
       [item]: val
@@ -161,6 +216,19 @@ const Set_weight_data = (item,val) => {
   })
 }
 
+const Set_weight_minor_data = (item,val) => {
+  Set_saturn_choice((state) => {
+    return {...state,"weight_management": {
+        ...state["weight_management"], ["check_list"]:{
+          ...state["weight_management"]["check_list"],
+          [item]:!val,
+          "No_such_problems":false
+        }
+      }
+    }
+  })
+}
+
 const Set_others_input = (item,val) => {
   Set_saturn_long_choice((state) => {
     return {...state,"weight_management": {
@@ -178,20 +246,29 @@ const Set_others_input = (item,val) => {
   }, [])
 
   useEffect(()=>{
-    window.localStorage.setItem('saturn_long_choice',JSON.stringify(saturn_long_choice))
-  },[saturn_long_choice])
+    window.localStorage.setItem('saturn_long_choice',JSON.stringify(saturn_long_choice));
+    window.localStorage.setItem('saturn_choice',JSON.stringify(saturn_choice));
+    window.localStorage.setItem('assessment_type',assessment_type);
+  },[saturn_long_choice,saturn_choice,assessment_type])
 
   return (
     <BrowserRouter basename="/pages/long-consultation-saturn"> 
        <div className='main-container'>
            <Routes>
-             <Route path='/' exact element={<LandingPage Set_data={Set_data}/>}/>
+             <Route path='/' exact element={<LandingPage Set_long_short={Set_long_short} Set_data={Set_data}/>}/>
              {/* <Route path='/test' exact element={<ProgressBar Set_data={Set_data}/>}/> */}
-             <Route path='/choice' exact element={<ChoicePage saturn_long_choice={saturn_long_choice} 
+             <Route path='/choice' exact element={<ChoicePage assessment_type={assessment_type} saturn_long_choice={saturn_long_choice} 
                 Set_data={Set_data}
-                Set_minor_data={Set_minor_data}/>}/>
-             <Route path='/user-details' exact element={<BasicInfo saturn_long_choice={saturn_long_choice}
-             Set_minor_data={Set_minor_data} />}/>
+                Set_minor_data={Set_minor_data}
+                saturn_choice={saturn_choice}
+                Set_short_data={Set_short_data}
+                Set_minor_short_data= {Set_minor_short_data}
+                />}/>
+             <Route path='/user-details' exact element={<BasicInfo assessment_type={assessment_type} saturn_long_choice={saturn_long_choice}
+             Set_minor_data={Set_minor_data} 
+             saturn_choice={saturn_choice}
+             Set_minor_short_data= {Set_minor_short_data}
+             />}/>
              {/* <Route path='/hairfall' exact element={<HairOne/>}/>
              <Route path='/hairfall-1' exact element={<HairTwo/>}/>
              <Route path='/hairfall-2' exact element={<HairThree/>}/> */}
@@ -220,7 +297,7 @@ const Set_others_input = (item,val) => {
              <Route path='/skin-11' exact element={<SkinTwelve saturn_long_choice={saturn_long_choice}
              Set_minor_data={Set_minor_data} />}/>
              <Route path='/skin-12' exact element={<SkinThirteen saturn_long_choice={saturn_long_choice}
-             Set_problems_data={Set_problems_data} />}/>
+             Set_problems_data={Set_problems_data}  Set_minor_data={Set_minor_data}/>}/>
              <Route path='/skin-13' exact element={<SkinFourteen saturn_long_choice={saturn_long_choice}
              Set_minor_data={Set_minor_data} />}/>
              <Route path='/skin-14' exact element={<SkinFifteen saturn_long_choice={saturn_long_choice}
@@ -228,7 +305,7 @@ const Set_others_input = (item,val) => {
              <Route path='/skin-15' exact element={<SkinSixteen saturn_long_choice={saturn_long_choice}
              Set_minor_data={Set_minor_data} />}/>
              <Route path='/skin-16' exact element={<SkinSeventeen saturn_long_choice={saturn_long_choice}
-             Set_minor_data={Set_minor_data} />}/>
+             Set_minor_data={Set_minor_data} Set_problems_data={Set_problems_data}/>}/>
              <Route path='/skin-17' exact element={<SkinEighteen saturn_long_choice={saturn_long_choice}
              Set_minor_data={Set_minor_data} />}/>
              {/* <Route path='/performance' exact element={<PerformanceOne/>}/>
@@ -240,13 +317,17 @@ const Set_others_input = (item,val) => {
              <Route path='/beard-1' exact element={<BeardTwo/>}/>
              <Route path='/beard-2' exact element={<BeardThree/>}/>*/}
              <Route path='/weight-management' exact element={<WeightLossOne saturn_long_choice={saturn_long_choice}
-             Set_minor_data={Set_minor_data} />}/>
+             Set_minor_data={Set_minor_data} saturn_choice={saturn_choice} 
+             Set_minor_short_data={Set_minor_short_data} assessment_type={assessment_type} />}/>
              <Route path='/weight-management-1' exact element={<WeightLossTwo saturn_long_choice={saturn_long_choice}
-             Set_minor_data={Set_minor_data}/>}/>
+             Set_minor_data={Set_minor_data}
+             saturn_choice={saturn_choice} 
+             Set_minor_short_data={Set_minor_short_data} assessment_type={assessment_type}
+             />}/>
              <Route path='/weight-management-2' exact element={<WeightLossThree saturn_long_choice={saturn_long_choice}
              Set_minor_data={Set_minor_data}/>}/>
              <Route path='/weight-management-3' exact element={<WeightLossFour saturn_long_choice={saturn_long_choice}
-             Set_weight_data={Set_weight_data}/>}/>
+             Set_weight_data={Set_weight_data} Set_minor_data={Set_minor_data}/>}/>
              <Route path='/weight-management-4' exact element={<WeightLossFive saturn_long_choice={saturn_long_choice}
              Set_minor_data={Set_minor_data}/>}/>
              <Route path='/weight-management-5' exact element={<WeightLossSix saturn_long_choice={saturn_long_choice}
@@ -269,7 +350,8 @@ const Set_others_input = (item,val) => {
                 Set_data={Set_data}/>}/>
              {/* <Route path='/book' exact element={<Book/>}/> */}
              {/* <Route path='/recommendation' exact element={<Recommendation saturn_long_choice={saturn_long_choice}/>}/> */}
-             <Route path='/callback' exact element={<Callback saturn_long_choice={saturn_long_choice}/>}/>
+             <Route path='/callback' exact element={<Callback saturn_long_choice={saturn_long_choice} 
+             assessment_type={assessment_type}/>}/>
              <Route path='*' exact element={<LandingPage Set_data={Set_data}/>}/>
            </Routes>
        </div> 

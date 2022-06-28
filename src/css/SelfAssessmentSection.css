@@ -249,7 +249,7 @@
     text-align: center;
 }
 
-.top-heading{
+.top-heading, .bottom-heading{
     display: flex;
 }
 
