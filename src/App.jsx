@@ -53,6 +53,7 @@ import WeightLossThirteen from './Components/WeightLoss/WeightLossThirteen'
 import BasicInfo from './Components/BasicInfo';
 
 function App() {
+  let [assessment_type,Set_assessment_type] = useState(window.localStorage.getItem("assessment_type") || "30 sec");
   let [saturn_long_choice,Set_saturn_long_choice] = useState(JSON.parse(window.localStorage.getItem('saturn_long_choice')) || {
     "category":"skin",
     "user_info":{
@@ -155,17 +156,31 @@ function App() {
     "appointment_type":"FREE Consultation call"
   })
   
-  const [assessment_type,Set_assessment_type] = useState(window.localStorage.getItem("assessment_type") || "30 sec");
 
-const Set_data = (item,val) => {
-  Set_saturn_long_choice((prevState)=>{
-    return {...prevState,[item]: val}
-  })
-}
+  
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
-const Set_long_short = (type) => {
-  Set_assessment_type(type);
-}
+  useEffect(()=>{
+    window.localStorage.setItem('saturn_long_choice',JSON.stringify(saturn_long_choice));
+    window.localStorage.setItem('assessment_type',assessment_type);
+    console.log(saturn_choice.skin.skin_allergy_to,'after')
+  },[saturn_long_choice,saturn_choice,assessment_type])
+  
+
+
+  const Set_data = (item,val) => {
+    Set_saturn_long_choice((prevState)=>{
+      return {...prevState,[item]: val}
+    })
+  }
+  
+  const Set_long_short = (type) => {
+    console.log()
+    console.log(assessment_type,'before', type,'selected type')
+    Set_assessment_type(type);
+  }
 
 const Set_short_data = (item,val) => {
   Set_saturn_choice((prevState)=>{
@@ -183,7 +198,9 @@ const Set_minor_data = (minor_key,item,val) => {
 }
 
 const Set_minor_short_data = (minor_key,item,val) => {
+  console.log(minor_key,item,val,'in minor short data values')
   Set_saturn_choice((state)=>{
+    console.log(state.skin.skin_allergy_to,'prev state')
     return {...state,[minor_key]:{
       ...state[minor_key],
       [item]: val
@@ -240,17 +257,6 @@ const Set_others_input = (item,val) => {
     }
   })
 }
-
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
-
-  useEffect(()=>{
-    window.localStorage.setItem('saturn_long_choice',JSON.stringify(saturn_long_choice));
-    window.localStorage.setItem('saturn_choice',JSON.stringify(saturn_choice));
-    window.localStorage.setItem('assessment_type',assessment_type);
-  },[saturn_long_choice,saturn_choice,assessment_type])
-
 
   return (
     <BrowserRouter basename="/pages/long-consultation-saturn"> 
@@ -411,7 +417,7 @@ const Set_others_input = (item,val) => {
              {/* <Route path='/book' exact element={<Book/>}/> */}
              {/* <Route path='/recommendation' exact element={<Recommendation saturn_long_choice={saturn_long_choice}/>}/> */}
              <Route path='/callback' exact element={<Callback saturn_long_choice={saturn_long_choice} 
-             assessment_type={assessment_type}/>}/>
+             assessment_type={assessment_type} saturn_choice={saturn_choice}/>}/>
              <Route path='*' exact element={<LandingPage Set_data={Set_data}/>}/>
            </Routes>
        </div> 

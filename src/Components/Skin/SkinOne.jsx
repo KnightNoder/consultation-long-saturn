@@ -14,6 +14,8 @@ const SkinOne = ({saturn_long_choice,Set_minor_data,saturn_choice,Set_minor_shor
     }, 3000);
   }, []);
 
+  console.log(saturn_choice.skin.skin_concern,'concern selected')
+
   return (
     <>
         <div className={`${disp ? "show-overlay-screen" : "hide-overlay-screen"}`}>

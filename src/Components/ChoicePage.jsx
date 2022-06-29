@@ -27,7 +27,6 @@ const ChoicePage = ({saturn_long_choice,Set_data,Set_minor_data,
     Set_minor_short_data("user_info","age","")
   }, [])
 
-
   return (
     <>
         <div className="choice-container">
@@ -40,12 +39,12 @@ const ChoicePage = ({saturn_long_choice,Set_data,Set_minor_data,
               <ChoiceCard 
                clickHandler={() => 
                 assessment_type == '30 sec' ?  Set_short_data("category","weight-management") : Set_data("category","weight-management")
-              } choice={ assessment_type == '30 sec' ? saturn_choice.category : saturn_long_choice.category} noImage="true" image={weightlossImage} text="Weight Management" 
+              } choice={ (assessment_type == '30 sec') ? saturn_choice.category : saturn_long_choice.category} noImage="true" image={weightlossImage} text="Weight Management" 
                value="weight-management"/>
               <ChoiceCard 
                clickHandler={() => 
                 assessment_type == '30 sec' ?  Set_short_data("category","skin") : Set_data("category","skin")
-              } choice={assessment_type == '30 sec' ? saturn_choice.category : saturn_long_choice.category} noImage="true" image={skinImage} text="Skin Health"
+              } choice={(assessment_type == '30 sec') ? saturn_choice.category : saturn_long_choice.category} noImage="true" image={skinImage} text="Skin Health"
                value="skin"/>
             </div>
         </div>

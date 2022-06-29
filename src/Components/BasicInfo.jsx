@@ -20,8 +20,6 @@ const BasicInfo = ({saturn_long_choice,Set_minor_data,saturn_choice,Set_minor_sh
     SetVibrate(true)
   }
 
-  console.log(saturn_long_choice.user_info ,'validity check' )
-
   const numberCheck = (e)  => {
             var key;
             var keychar;

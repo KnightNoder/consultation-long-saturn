@@ -15,6 +15,8 @@ const SkinFour = ({saturn_long_choice,Set_minor_data,saturn_choice,Set_minor_sho
     }, 5000);
   }, [])
 
+  console.log(saturn_choice.skin.skin_allergy_to,'allergy selected')
+
   return (
     <>
         <div className='progress-bar-saturn-step'>

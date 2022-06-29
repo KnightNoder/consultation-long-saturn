@@ -9,7 +9,7 @@ import '../css/ProceedTemplate.css'
 const {getCategory,getProductId,getSendMailData} = require('./common/utils')
 const axios = require('axios');
 
-const Callback = ({saturn_long_choice,assessment_type}) => {
+const Callback = ({saturn_long_choice,assessment_type,saturn_choice}) => {
     const [image_1,Set_image_1] =  useState('');
     const [price_1,Set_price_1] = useState('');
     const [compare_at_price_1,Set_compare_at_price_1] = useState('')
@@ -28,12 +28,18 @@ const Callback = ({saturn_long_choice,assessment_type}) => {
     // const [product_subtext,Set_product_subtext] = useState('')
     
   useEffect(()=>{
-    const product_id = getProductId(saturn_long_choice);
-    const product_id_1 = product_id[0];
-    const product_id_2 = product_id[1];
-    console.log(product_id_1,product_id_2,'products');
-    const weight = parseInt(saturn_long_choice.user_info.weight);
-    const height = parseInt(saturn_long_choice.user_info.height);
+    const product_id = getProductId(saturn_long_choice,saturn_choice,assessment_type);
+    if(assessment_type == '6 mins') {
+        var product_id_1 = product_id[0];
+        var product_id_2 = product_id[1];
+        var weight = parseInt(saturn_long_choice.user_info.weight);
+        var height = parseInt(saturn_long_choice.user_info.height);
+    } else {
+        var product_id_1 = product_id;
+        var weight = parseInt(saturn_choice.user_info.weight);
+        var height = parseInt(saturn_choice.user_info.height);
+    }
+
     const BMI = parseInt((weight * 10000) / (height * height));
     Set_bmi(BMI)
     setTimeout(() => {
@@ -68,6 +74,7 @@ const Callback = ({saturn_long_choice,assessment_type}) => {
             // Set_link(product_recommended[0]["handle"])
             
             console.log(product_id_2,'prod 2')
+            if( product_id_2) {
             const product_recommended_2 = (response.data["products"].filter((item) => item.id == product_id_2));
             console.log(product_recommended_2,'reco2');
             let product_title_2 = product_recommended_2[0]["title"];
@@ -85,6 +92,7 @@ const Callback = ({saturn_long_choice,assessment_type}) => {
             Set_image_2(img_src_2)
             Set_price_2(product_price_2)
             Set_compare_at_price_2(compare_price_2)
+        }
         }).catch((error)=>{
             console.log(error)
         });
@@ -92,7 +100,8 @@ const Callback = ({saturn_long_choice,assessment_type}) => {
 
     getData();
 
-    const data = getSendMailData(saturn_long_choice,assessment_type);
+    const data = getSendMailData(saturn_long_choice,assessment_type,saturn_choice);
+    console.log(data,'data for mail')
     const sendMail = async () => {
         const config = {
             method: 'post',
@@ -201,13 +210,13 @@ const Callback = ({saturn_long_choice,assessment_type}) => {
                         <div className="price">
                            Rs.{price_1} { compare_at_price_1 ? <span className="strike-text">&nbsp;&nbsp;<strike>Rs.{compare_at_price_1}</strike></span> : null }
                         </div>
-                        <div className="buy-button product-checkout-button">
+                        <div className={`${assessment_type == '30 sec' ? 'no-display': ""} buy-button product-checkout-button`}>
                             <GenericButton productNavigate="true" productLink={product_link_1} radiusBottom="true" text={"Buy Now"}/>
                         </div>
                     </div>
                 </div>
 
-                <div className="product-card">
+                { assessment_type == '6 mins' ?  <div className="product-card">
                     <div className="image-section">
                         <img src={image_2} className="image" alt="Product1" srcset="" />
                     </div>
@@ -230,15 +239,15 @@ const Callback = ({saturn_long_choice,assessment_type}) => {
                             <GenericButton productNavigate="true" productLink={product_link_2} radiusBottom="true" text={"Buy Now"}/>
                         </div>
                     </div>
-                </div>
+                </div> : null }
             </div>
-            <div className="product-checkout">
+            { assessment_type == '30 sec' ? <div className="product-checkout">
                 <div className="proceed-container">
                     <div className='proceed-button'>
                         <GenericButton text="BUY NOW"  productNavigate="true" productLink={product_link_1}/>
                     </div>
                 </div>
-            </div>
+            </div> : null}
         </div>
     </>
     )
