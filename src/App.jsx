@@ -411,7 +411,7 @@ const Set_others_input = (item,val) => {
              Set_minor_data={Set_minor_data} 
              saturn_choice={saturn_choice}
              Set_minor_short_data= {Set_minor_short_data}/>}/>
-             <Route path='/weight-management-13' exact element={<WeightLossFourteen  
+             <Route path='/weight-management-13' exact element={<WeightLossFourteen  assessment_type={assessment_type}
              saturn_choice={saturn_choice}
              Set_minor_short_data= {Set_minor_short_data} Set_weight_minor_data={Set_weight_minor_data} 
              Set_others_input={Set_others_input} />}/>

@@ -5,7 +5,7 @@ import '../../css/WeightLossFour.css';
 import { useEffect, useState } from 'react';
 import ImageCard from '../ImageCard'
 
-const WeightLossFour = ({saturn_choice,Set_minor_short_data,Set_weight_minor_data,Set_others_input}) => {
+const WeightLossFour = ({saturn_choice,Set_minor_short_data,Set_weight_minor_data,Set_others_input,assessment_type}) => {
   const [disp,Set_disp] = useState(true);
   
   const changeHandler = (name,value) =>{
@@ -64,7 +64,7 @@ const WeightLossFour = ({saturn_choice,Set_minor_short_data,Set_weight_minor_dat
               </div>
             </div>
         </div>
-        <ProceedTemplate text="Proceed" choice={"appointment"} vibrateText={()=>{}} backLink="weight-management-2" conditionMet={!!Object.values(saturn_choice.weight_management.check_list).filter((x)=> x).length}/>
+        <ProceedTemplate text="Proceed" choice={"appointment"} vibrateText={()=>{}} backLink={`${assessment_type ==  "6 mins" ? "weight-management-2" : "weight-management-9"}`} conditionMet={!!Object.values(saturn_choice.weight_management.check_list).filter((x)=> x).length}/>
     </>
   )
 }

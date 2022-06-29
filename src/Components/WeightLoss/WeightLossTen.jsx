@@ -48,7 +48,7 @@ const WeightLossThree = ({saturn_long_choice,Set_minor_data,saturn_choice,Set_mi
                value="1-2 times a week" text="1-2 times a week"/>
             </div>
         </div>
-        <ProceedTemplate text="Proceed" choice={`${assessment_type ==  "6 mins" ? "weight-management-10" : "weight-management-3"}`} backLink={`${assessment_type == "6 min" ? "weight-management-8" : "weight-management-1"}`} conditionMet="true"/>
+        <ProceedTemplate text="Proceed" choice={`${assessment_type ==  "6 mins" ? "weight-management-10" : "weight-management-13"}`} backLink={`${assessment_type == "6 min" ? "weight-management-8" : "weight-management-1"}`} conditionMet="true"/>
     </>
   )
 }
