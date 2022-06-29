@@ -32,19 +32,19 @@ const WeightLossThree = ({saturn_long_choice,Set_minor_data,saturn_choice,Set_mi
               <h5>(no judgements here)</h5>
               <ChoiceCard 
                 clickHandler={() => assessment_type == "6 mins" ? Set_minor_data("weight_management","exercise_a_week","Don't work out at all") : Set_minor_short_data("weight_management","exercise_a_week","Don't work out at all")} 
-                noImage="true" choice={saturn_long_choice.weight_management.exercise_a_week} 
+                noImage="true" choice={assessment_type == "6 mins" ? saturn_long_choice.weight_management.exercise_a_week :  saturn_choice.weight_management.exercise_a_week} 
                 value="Don't work out at all" text="Don't work out at all"/>
               <ChoiceCard 
                 clickHandler={() => assessment_type == "6 mins" ? Set_minor_data("weight_management","exercise_a_week","Daily") : Set_minor_short_data("weight_management","exercise_a_week","Daily")} 
-                noImage="true" choice={saturn_long_choice.weight_management.exercise_a_week}  
+                noImage="true" choice={assessment_type == "6 mins" ? saturn_long_choice.weight_management.exercise_a_week :  saturn_choice.weight_management.exercise_a_week}  
                 value="Daily" text="Daily"/>
               <ChoiceCard 
                clickHandler={() => assessment_type == "6 mins" ? Set_minor_data("weight_management","exercise_a_week","5-6 times a week") : Set_minor_short_data("weight_management","exercise_a_week","5-6 times a week")} 
-               noImage="true" choice={saturn_long_choice.weight_management.exercise_a_week}  
+               noImage="true" choice={assessment_type == "6 mins" ? saturn_long_choice.weight_management.exercise_a_week :  saturn_choice.weight_management.exercise_a_week}  
                value="5-6 times a week" text="5-6 times a week"/>
               <ChoiceCard 
                clickHandler={() => assessment_type == "6 mins" ? Set_minor_data("weight_management","exercise_a_week","1-2 times a week") : Set_minor_short_data("weight_management","exercise_a_week","1-2 times a week")} 
-               noImage="true" choice={saturn_long_choice.weight_management.exercise_a_week}  
+               noImage="true" choice={assessment_type == "6 mins" ? saturn_long_choice.weight_management.exercise_a_week :  saturn_choice.weight_management.exercise_a_week}  
                value="1-2 times a week" text="1-2 times a week"/>
             </div>
         </div>
