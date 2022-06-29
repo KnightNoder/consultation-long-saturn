@@ -120,6 +120,7 @@ export const getProductId = (
         }
     }
   } else {
+    console.log(saturn_choice.category, "cat short");
     switch (saturn_choice.category) {
       case "weight-management":
         const weight = parseInt(saturn_choice.user_info.weight);

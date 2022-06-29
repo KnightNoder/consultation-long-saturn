@@ -50,6 +50,7 @@ import WeightLossTen from './Components/WeightLoss/WeightLossTen'
 import WeightLossEleven from './Components/WeightLoss/WeightLossEleven'
 import WeightLossTwelve from './Components/WeightLoss/WeightLossTwelve'
 import WeightLossThirteen from './Components/WeightLoss/WeightLossThirteen'
+import WeightLossFourteen from './Components/WeightLoss/WeightLossFourteen'
 import BasicInfo from './Components/BasicInfo';
 
 function App() {
@@ -165,7 +166,7 @@ function App() {
   useEffect(()=>{
     window.localStorage.setItem('saturn_long_choice',JSON.stringify(saturn_long_choice));
     window.localStorage.setItem('assessment_type',assessment_type);
-    console.log(saturn_choice.skin.skin_allergy_to,'after')
+    window.localStorage.setItem('saturn_choice',JSON.stringify(saturn_choice));
   },[saturn_long_choice,saturn_choice,assessment_type])
   
 
@@ -198,7 +199,6 @@ const Set_minor_data = (minor_key,item,val) => {
 }
 
 const Set_minor_short_data = (minor_key,item,val) => {
-  console.log(minor_key,item,val,'in minor short data values')
   Set_saturn_choice((state)=>{
     console.log(state.skin.skin_allergy_to,'prev state')
     return {...state,[minor_key]:{
@@ -247,7 +247,7 @@ const Set_weight_minor_data = (item,val) => {
 }
 
 const Set_others_input = (item,val) => {
-  Set_saturn_long_choice((state) => {
+  Set_saturn_choice((state) => {
     return {...state,"weight_management": {
         ...state["weight_management"], ["check_list"]:{
           ...state["weight_management"]["check_list"],
@@ -411,6 +411,10 @@ const Set_others_input = (item,val) => {
              Set_minor_data={Set_minor_data} 
              saturn_choice={saturn_choice}
              Set_minor_short_data= {Set_minor_short_data}/>}/>
+             <Route path='/weight-management-13' exact element={<WeightLossFourteen  
+             saturn_choice={saturn_choice}
+             Set_minor_short_data= {Set_minor_short_data} Set_weight_minor_data={Set_weight_minor_data} 
+             Set_others_input={Set_others_input} />}/>
 
              <Route path='/appointment' exact element={<Appointment saturn_long_choice={saturn_long_choice} 
                 Set_data={Set_data}/>}/>

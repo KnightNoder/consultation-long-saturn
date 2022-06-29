@@ -7,22 +7,20 @@ import ProgressBarComp from '../../Components/ProgressBarComp';
 const SkinTwo = ({saturn_long_choice,Set_minor_data,saturn_choice,
   Set_minor_short_data,assessment_type}) => {
   const [disp,Set_disp] = useState(false);
-  const [front_link,Set_front_link] = useState("")
   useEffect(() => {
     window.scrollTo(0,0);
     setTimeout(() => {
       Set_disp(false)
     }, 5000);
-    assessment_type == "6 mins" ? Set_front_link("skin-2") : Set_front_link("skin-15")
   }, []);
   
-  console.log(assessment_type,'assessment_type');
+  console.log(assessment_type == '6 mins','assessment_type');
   return (
     <>
         <div className={`${disp ? "show-overlay-screen" : "hide-overlay-screen"}`}>
           Skin concerns are unique to each individual and one needs the right care to keep up with good skin health
         </div>
-        <div className='progress-bar-saturn-step'>
+        <div className={`${assessment_type == '6 mins' ? "progress-bar-saturn-step" : "hide-overlay-screen"}`}>
           <ProgressBarComp progress_step="39.5"
           img_1="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-1.png?v=1655109040"
           img_2="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-2.png?v=1655109040"

@@ -21,7 +21,7 @@ const SkinOne = ({saturn_long_choice,Set_minor_data,saturn_choice,Set_minor_shor
         <div className={`${disp ? "show-overlay-screen" : "hide-overlay-screen"}`}>
           Answer a few questions so we can help
         </div>
-        <div className='progress-bar-saturn-step'>
+        <div className={`${assessment_type == '6 mins' ? "progress-bar-saturn-step" : "hide-overlay-screen"}`}>
           <ProgressBarComp progress_step="34" 
           img_1="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-1.png?v=1655109040"
           img_2="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-2.png?v=1655109040"

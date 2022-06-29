@@ -29,32 +29,41 @@ const Callback = ({saturn_long_choice,assessment_type,saturn_choice}) => {
     
   useEffect(()=>{
     const product_id = getProductId(saturn_long_choice,saturn_choice,assessment_type);
+    console.log(product_id,'prod id');
     if(assessment_type == '6 mins') {
         var product_id_1 = product_id[0];
         var product_id_2 = product_id[1];
-        var weight = parseInt(saturn_long_choice.user_info.weight);
-        var height = parseInt(saturn_long_choice.user_info.height);
+        if (saturn_long_choice.category == 'weight-management') {
+            var weight = parseInt(saturn_long_choice.user_info.weight);
+            var height = parseInt(saturn_long_choice.user_info.height);
+            var BMI = parseInt((weight * 10000) / (height * height));
+            Set_bmi(BMI)
+        }
     } else {
         var product_id_1 = product_id;
-        var weight = parseInt(saturn_choice.user_info.weight);
-        var height = parseInt(saturn_choice.user_info.height);
+        if( saturn_choice.category ==  'weight-management') {
+            var weight = parseInt(saturn_choice.user_info.weight);
+            var height = parseInt(saturn_choice.user_info.height);
+            var BMI = parseInt((weight * 10000) / (height * height));
+            Set_bmi(BMI)
+        }
     }
 
-    const BMI = parseInt((weight * 10000) / (height * height));
-    Set_bmi(BMI)
+    const category = (assessment_type == '6 mins' ? saturn_long_choice.category : saturn_choice.category)
     setTimeout(() => {
         Set_disp(false)
       }, 4000);
     const getData = async () => {
         var config = {
             method: 'get',
-            url: `https://${process.env.REACT_APP_GET_PRODUCTS_BASE_URL}/${saturn_long_choice.category}/products.json`,
+            url: `https://${process.env.REACT_APP_GET_PRODUCTS_BASE_URL}/${category}/products.json`,
             headers: { 
               'Content-Type': 'application/json'            }
         };
         await axios(config)
         .then(response => {
             const product_recommended_1 = (response.data["products"].filter((item) => item.id == product_id_1));
+
             console.log(product_recommended_1,'reco1');
             let product_title_1 = product_recommended_1[0]["title"];
             const product_price_1 = product_recommended_1[0]["variants"][0]["price"]
@@ -118,7 +127,7 @@ const Callback = ({saturn_long_choice,assessment_type,saturn_choice}) => {
         }); 
     }
     
-    sendMail();
+    // sendMail();
 
     },[])
 
@@ -181,7 +190,7 @@ const Callback = ({saturn_long_choice,assessment_type,saturn_choice}) => {
                     <h3 className="hidden-h3">
                          Our Recommendation
                     </h3>
-                   { saturn_long_choice.category === 'weight-management' ?  <div className="bmi">
+                   { bmi ?  <div className="bmi">
                         <div className="bmi-text">
                             Your BMI
                         </div>

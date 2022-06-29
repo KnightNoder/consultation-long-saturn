@@ -27,6 +27,7 @@ const ChoicePage = ({saturn_long_choice,Set_data,Set_minor_data,
     Set_minor_short_data("user_info","age","")
   }, [])
 
+  console.log(saturn_choice.category,'cat selected')
   return (
     <>
         <div className="choice-container">
