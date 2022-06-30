@@ -298,59 +298,59 @@ const Set_others_input = (item,val) => {
              <Route path='/skin-4' exact element={<SkinFive saturn_long_choice={saturn_long_choice}
              Set_minor_data={Set_minor_data} 
              saturn_choice={saturn_choice}
-             Set_minor_short_data= {Set_minor_short_data} />}/>
+             Set_minor_short_data= {Set_minor_short_data} assessment_type={assessment_type}/>}/>
              <Route path='/skin-5' exact element={<SkinSix saturn_long_choice={saturn_long_choice}
              Set_minor_data={Set_minor_data} 
              saturn_choice={saturn_choice}
-             Set_minor_short_data= {Set_minor_short_data} />}/>
+             Set_minor_short_data= {Set_minor_short_data} assessment_type={assessment_type}/>}/>
              <Route path='/skin-6' exact element={<SkinSeven saturn_long_choice={saturn_long_choice}
              Set_minor_data={Set_minor_data} 
              saturn_choice={saturn_choice}
-             Set_minor_short_data= {Set_minor_short_data} />}/>
+             Set_minor_short_data= {Set_minor_short_data} assessment_type={assessment_type}/>}/>
              <Route path='/skin-7' exact element={<SkinEight saturn_long_choice={saturn_long_choice}
              Set_minor_data={Set_minor_data} 
              saturn_choice={saturn_choice}
-             Set_minor_short_data= {Set_minor_short_data} />}/>
+             Set_minor_short_data= {Set_minor_short_data} assessment_type={assessment_type}/>}/>
              <Route path='/skin-8' exact element={<SkinNine saturn_long_choice={saturn_long_choice}
              Set_minor_data={Set_minor_data} 
              saturn_choice={saturn_choice}
-             Set_minor_short_data= {Set_minor_short_data} />}/>
+             Set_minor_short_data= {Set_minor_short_data} assessment_type={assessment_type}/>}/>
              <Route path='/skin-9' exact element={<SkinTen saturn_long_choice={saturn_long_choice}
              Set_minor_data={Set_minor_data} 
              saturn_choice={saturn_choice}
-             Set_minor_short_data= {Set_minor_short_data} />}/>
+             Set_minor_short_data= {Set_minor_short_data} assessment_type={assessment_type}/>}/>
              <Route path='/skin-10' exact element={<SkinEleven saturn_long_choice={saturn_long_choice}
              Set_minor_data={Set_minor_data} 
              saturn_choice={saturn_choice}
-             Set_minor_short_data= {Set_minor_short_data} />}/>
+             Set_minor_short_data= {Set_minor_short_data} assessment_type={assessment_type}/>}/>
              <Route path='/skin-11' exact element={<SkinTwelve saturn_long_choice={saturn_long_choice}
              Set_minor_data={Set_minor_data} 
              saturn_choice={saturn_choice}
-             Set_minor_short_data= {Set_minor_short_data} />}/>
+             Set_minor_short_data= {Set_minor_short_data} assessment_type={assessment_type}/>}/>
              <Route path='/skin-12' exact element={<SkinThirteen saturn_long_choice={saturn_long_choice}
              Set_problems_data={Set_problems_data}  Set_minor_data={Set_minor_data} 
              saturn_choice={saturn_choice}
-             Set_minor_short_data= {Set_minor_short_data}/>}/>
+             Set_minor_short_data= {Set_minor_short_data} assessment_type={assessment_type}/>}/>
              <Route path='/skin-13' exact element={<SkinFourteen saturn_long_choice={saturn_long_choice}
              Set_minor_data={Set_minor_data} 
              saturn_choice={saturn_choice}
-             Set_minor_short_data= {Set_minor_short_data} />}/>
+             Set_minor_short_data= {Set_minor_short_data} assessment_type={assessment_type}/>}/>
              <Route path='/skin-14' exact element={<SkinFifteen saturn_long_choice={saturn_long_choice}
              Set_minor_data={Set_minor_data} 
              saturn_choice={saturn_choice}
-             Set_minor_short_data= {Set_minor_short_data} />}/>
+             Set_minor_short_data= {Set_minor_short_data} assessment_type={assessment_type}/>}/>
              <Route path='/skin-15' exact element={<SkinSixteen saturn_long_choice={saturn_long_choice}
              Set_minor_data={Set_minor_data} 
              saturn_choice={saturn_choice}
-             Set_minor_short_data= {Set_minor_short_data} />}/>
+             Set_minor_short_data= {Set_minor_short_data} assessment_type={assessment_type}/>}/>
              <Route path='/skin-16' exact element={<SkinSeventeen saturn_long_choice={saturn_long_choice}
              Set_minor_data={Set_minor_data} 
              saturn_choice={saturn_choice}
-             Set_minor_short_data= {Set_minor_short_data} Set_problems_data={Set_problems_data}/>}/>
+             Set_minor_short_data= {Set_minor_short_data} Set_problems_data={Set_problems_data} assessment_type={assessment_type}/>}/>
              <Route path='/skin-17' exact element={<SkinEighteen saturn_long_choice={saturn_long_choice}
              Set_minor_data={Set_minor_data} 
              saturn_choice={saturn_choice}
-             Set_minor_short_data= {Set_minor_short_data} />}/>
+             Set_minor_short_data= {Set_minor_short_data} assessment_type={assessment_type} />}/>
              {/* <Route path='/performance' exact element={<PerformanceOne/>}/>
              <Route path='/performance-1' exact element={<PerformanceTwo/>}/>
              <Route path='/performance-2' exact element={<PerformanceThree/>}/>
@@ -370,7 +370,7 @@ const Set_others_input = (item,val) => {
              <Route path='/weight-management-2' exact element={<WeightLossThree saturn_long_choice={saturn_long_choice}
              Set_minor_data={Set_minor_data} 
              saturn_choice={saturn_choice}
-             Set_minor_short_data= {Set_minor_short_data}/>}/>
+             Set_minor_short_data= {Set_minor_short_data} assessment_type={assessment_type}/>}/>
              <Route path='/weight-management-3' exact element={<WeightLossFour saturn_long_choice={saturn_long_choice}
              Set_weight_data={Set_weight_data} Set_minor_data={Set_minor_data} 
              saturn_choice={saturn_choice}
@@ -398,7 +398,7 @@ const Set_others_input = (item,val) => {
              <Route path='/weight-management-9' exact element={<WeightLossTen saturn_long_choice={saturn_long_choice}
              Set_minor_data={Set_minor_data} 
              saturn_choice={saturn_choice}
-             Set_minor_short_data= {Set_minor_short_data}/>}/>
+             Set_minor_short_data= {Set_minor_short_data} assessment_type={assessment_type}/>}/>
              <Route path='/weight-management-10' exact element={<WeightLossEleven saturn_long_choice={saturn_long_choice}
              Set_minor_data={Set_minor_data} 
              saturn_choice={saturn_choice}

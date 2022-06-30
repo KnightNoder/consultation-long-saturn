@@ -60,7 +60,7 @@ const WeightLossTwo = ({saturn_long_choice,Set_minor_data}) => {
   return (
     <>
         <div className='progress-bar-saturn-step'>
-          <ProgressBarComp progress_step="56" 
+          <ProgressBarComp progress_step="79.2" 
           img_1="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/w-1.png?v=1655109040"
           img_2="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/w-2.png?v=1655109040"
           img_3="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/w-3.png?v=1655109040"
@@ -74,9 +74,13 @@ const WeightLossTwo = ({saturn_long_choice,Set_minor_data}) => {
             <div className='assessment'>
               <h5>Which type of food do you mostly consume?</h5>
               <ChoiceCard 
-                clickHandler={() => Set_minor_data("weight_management","food_type","Oily")} noImage="true" choice={saturn_long_choice.weight_management.food_type} value="Oily" text="Oily"/>
+                clickHandler={() => Set_minor_data("weight_management","food_type","Normal")} noImage="true" choice={saturn_long_choice.weight_management.food_type} value="Normal" text="Normal"/>
               <ChoiceCard 
                 clickHandler={() => Set_minor_data("weight_management","food_type", "Junk")} noImage="true" choice={saturn_long_choice.weight_management.food_type} value="Junk"  text="Junk"/>
+              <ChoiceCard 
+                clickHandler={() => Set_minor_data("weight_management","food_type","Oily")} noImage="true" choice={saturn_long_choice.weight_management.food_type} value="Oily" text="Oily"/>
+              <ChoiceCard 
+                clickHandler={() => Set_minor_data("weight_management","food_type", "Healthy")} noImage="true" choice={saturn_long_choice.weight_management.food_type} value="Healthy"  text="Healthy"/>
             </div>
         </div>
         <ProceedTemplate text="Proceed" choice={"weight-management-6"} backLink="weight-management-4" conditionMet="true"/>

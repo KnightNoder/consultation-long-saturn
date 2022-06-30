@@ -22,7 +22,7 @@ const WeightLossTwo = ({saturn_long_choice,Set_minor_data}) => {
           There's something special about outside food--tastier, love! Though homemade food is healthy :)
         </div>
         <div className='progress-bar-saturn-step'>
-          <ProgressBarComp progress_step="66.5"
+          <ProgressBarComp progress_step="76.5"
           img_1="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-1.png?v=1655109040"
           img_2="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-2.png?v=1655109040"
           img_3="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-3.png?v=1655109040"

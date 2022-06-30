@@ -54,7 +54,7 @@ const WeightLossOne = ({saturn_long_choice,Set_minor_data,saturn_choice,Set_mino
   return (
     <>
         <div className={`${assessment_type == "6 mins" ? "progress-bar-saturn-step" : "hide-overlay-screen"}`}>
-          <ProgressBarComp progress_step="16" 
+          <ProgressBarComp progress_step="33" 
           img_1="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/w-1.png?v=1655109040"
           img_2="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/w-2.png?v=1655109040"
           img_3="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/w-3.png?v=1655109040"

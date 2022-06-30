@@ -18,7 +18,7 @@ const WeightLossTwo = ({saturn_long_choice,Set_minor_data}) => {
   return (
     <>
         <div className='progress-bar-saturn-step'>
-          <ProgressBarComp progress_step="61.5" 
+          <ProgressBarComp progress_step="85.8" 
           img_1="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/w-1.png?v=1655109040"
           img_2="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/w-2.png?v=1655109040"
           img_3="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/w-3.png?v=1655109040"

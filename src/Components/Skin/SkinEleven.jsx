@@ -15,7 +15,7 @@ const SkinOne = ({saturn_long_choice,Set_minor_data}) => {
   return (
     <>
         <div className='progress-bar-saturn-step'>
-          <ProgressBarComp progress_step="66.5"
+          <ProgressBarComp progress_step="82"
           img_1="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-1.png?v=1655109040"
           img_2="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-2.png?v=1655109040"
           img_3="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-3.png?v=1655109040"
@@ -30,9 +30,13 @@ const SkinOne = ({saturn_long_choice,Set_minor_data}) => {
               <h5>Which type of food do you mostly consume?</h5>
               <div className='scroll-div'>
                 <ChoiceCard show={disp}
-                  clickHandler={() => Set_minor_data("skin","food_type","Oily")} noImage="true" choice={saturn_long_choice.skin.food_type} value="Oily" text="Oily"/>
+                  clickHandler={() => Set_minor_data("skin","food_type","Normal")} noImage="true" choice={saturn_long_choice.skin.food_type} value="Normal" text="Normal"/>
                 <ChoiceCard show={disp}
                   clickHandler={() => Set_minor_data("skin","food_type","Junk")} noImage="true" choice={saturn_long_choice.skin.food_type} value="Junk"  text="Junk"/>
+                <ChoiceCard show={disp}
+                  clickHandler={() => Set_minor_data("skin","food_type","Oily")} noImage="true" choice={saturn_long_choice.skin.food_type} value="Oily" text="Oily"/>
+                <ChoiceCard show={disp}
+                  clickHandler={() => Set_minor_data("skin","food_type","Healthy")} noImage="true" choice={saturn_long_choice.skin.food_type} value="Healthy"  text="Healthy"/>
               </div>
             </div>
         </div>
