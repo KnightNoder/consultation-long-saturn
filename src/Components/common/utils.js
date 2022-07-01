@@ -120,7 +120,6 @@ export const getProductId = (
         }
     }
   } else {
-    console.log(saturn_choice.category, "cat short");
     switch (saturn_choice.category) {
       case "weight-management":
         const weight = parseInt(saturn_choice.user_info.weight);
@@ -347,15 +346,17 @@ export const getSendMailData = (
     answer: "",
   };
 
-  var i = 0;
+  // var i = 0;
   for (const key in stateObject[choice]) {
-    var question_number = "question" + i;
-    var answer_number = "answer" + i;
+    // var question_number = "question" + i;
+    // var answer_number = "answer" + i;
     questionnaire.push({
-      [question_number]: key,
-      [answer_number]: stateObject[choice][key],
+      // [question_number]: key,
+      // [answer_number]: stateObject[choice][key],
+      question: key,
+      answer: stateObject[choice][key],
     });
-    i++;
+    // i++;
   }
 
   // var i = 0;
@@ -366,15 +367,15 @@ export const getSendMailData = (
   //   console.log(questionnaire, "qs bef");
   // }
 
-  while (Object.keys(questionnaire).length != 20) {
-    var question_number = "question" + i;
-    var answer_number = "answer" + i;
-    questionnaire.push({
-      [question_number]: "",
-      [answer_number]: "",
-    });
-    i++;
-  }
+  // while (Object.keys(questionnaire).length != 20) {
+  //   // var question_number = "question" + i;
+  //   // var answer_number = "answer" + i;
+  //   questionnaire.push({
+  //       question: "",
+  //       answer: "",
+  //   });
+  //   // i++;
+  // }
 
   const data = JSON.stringify({
     firstName:
@@ -397,7 +398,7 @@ export const getSendMailData = (
       assessment_type == "6 mins"
         ? saturn_long_choice.user_info.email
         : saturn_choice.user_info.email,
-    consultancy_type: assessment_type,
+    consultation_type: assessment_type,
     category:
       assessment_type == "6 mins"
         ? saturn_long_choice.category
