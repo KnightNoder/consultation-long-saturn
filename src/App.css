@@ -34,10 +34,6 @@ html {
   /* border: solid 1px; */
 }
 
-.progress-container {
-  margin-bottom: 1%;
-}
-
 .progress-bar-container {
   margin: 0 20%;
   text-align: center;
@@ -196,6 +192,24 @@ img {
     height:0px;
     width:0px
   }
+
+  .progress-bar-saturn-step {
+    margin-top: 5%;
+  }
+
+  .progress-bar-text {
+    font-size: 10px;
+  }
+
+  .progress-bar-container {
+    margin: 0 10%;
+  }
+  
+  .progress-bar-text {
+    width: 85%;
+    margin-left: 6%;
+    margin-top: 3%;
+  }
 }
 
 @media only screen and (min-width: 600px) {
@@ -304,11 +318,40 @@ img {
   }
 
   .progress-bar-image{
-    height:70px;
-    width:70px
+    /* height:70px;
+    width:70px */
+    height:0px;
+    width:0px
   }
 
   .progress-bar-saturn-step {
     margin-top: 3%;
   }
+
+  .progress-container {
+    margin-bottom: 3%;
+  }
+  
+  .progress-bar-text {
+    width: 65%;
+    margin-left: 17%;
+    margin-top: 1%
+  }
+
+}
+
+.indexedStep {
+  color: white;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  background-color: rgba(211, 211, 211, 0.8);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.indexedStep.accomplished {
+  background-color:  var(--saturnBorder);
 }
