@@ -285,7 +285,7 @@
     }
 
     .product-card {
-        height: 500px;
+        height: 540px;
         margin: 5% 10%;
         position: relative;
     }
@@ -327,8 +327,10 @@
 
     .product-card .image-section .image{
         /* height: 80%; */
-        height: 100%;
-        width: 100%;
+        /* height: 100%;
+        width: 100%; */
+        height: 85%;
+        width: 77%;
     }
 
     .product-card .image-section{
@@ -357,8 +359,9 @@
     }
 
     .details .buy-button{
-        width: 100%;
-        margin-bottom: 0;
+        width: 90%;
+        margin: 0 5% 3% 5%;
+        height: 20%;
     }
 
     .details .heading, .details .price{
@@ -370,7 +373,7 @@
     }
     
     .product-card .details .buy-button {
-        flex: 1.3;
+        /* flex: 1.3; */
     }
 
     .product-card .details .price {
@@ -449,7 +452,8 @@
     }
     
     .product-card .details .buy-button {
-        flex: .8;
+        /* flex: .8; */
+        height: 50px;
     }
 
     .strike-text{
