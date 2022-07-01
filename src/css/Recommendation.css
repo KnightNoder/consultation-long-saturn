@@ -366,6 +366,7 @@
 
     .details .heading, .details .price{
         margin-left: 5%;
+        margin-right: 5%;
     }
 
     .product-card .image-section{
