@@ -192,11 +192,11 @@ export const getSendMailData = (
 ) => {
   if (assessment_type == "6 mins") {
     var choice = saturn_long_choice.category;
-    var keys = Object.keys(saturn_long_choice.weight_management.check_list);
+    // var keys = Object.keys(saturn_long_choice.weight_management.check_list);
 
-    var filtered_string = keys.filter(function (key) {
-      return saturn_long_choice.weight_management.check_list[key];
-    });
+    // var filtered_string = keys.filter(function (key) {
+    //   return saturn_long_choice.weight_management.check_list[key];
+    // });
 
     var keys2 = Object.keys(saturn_long_choice.skin.health_issues);
 
@@ -249,7 +249,6 @@ export const getSendMailData = (
           saturn_long_choice.weight_management.meals_a_day,
         "How many days do you exercise in a week?":
           saturn_long_choice.weight_management.exercise_a_week,
-        "Do you have any pre-existing problems?": filtered_string.toString(),
         "How about your work style?":
           saturn_long_choice.weight_management.work_style,
         "Do you have any past allergy reactions to medicines?":

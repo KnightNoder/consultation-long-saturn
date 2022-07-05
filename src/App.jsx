@@ -97,16 +97,6 @@ function App() {
     "weight_management":{
       "meals_a_day":"Greater than 6 times",
       "exercise_a_week":"Daily",
-      "check_list":{
-        "Cholestrol": true,
-        "Thyroid":false,
-        "Heart":false,
-        "Diabetes": false,
-        "Kidney":false,
-        "No_such_problems": false,
-        "Others": false,
-        "Others_input":""
-      },
       "overweight":"Yes",
       "water_intake":"1-2 litres",
       "food_preference":"Homemade food",

@@ -147,7 +147,7 @@ const BasicInfo = ({saturn_long_choice,Set_minor_data,saturn_choice,Set_minor_sh
 const InputCard = ({heading,placeholder,requiredErrorText,value,vibrate, required,onchange,inputMode,validity,numberCheck}) => {
   return (
     <>
-      <h3 style={{}}>{heading} 
+      <h3 style={{}}>{heading}
         <div style={{display:"inline-block",fontSize:"20px",color:"#EA2C2C", marginLeft:"3px"}} className=''>{required}
         </div>
       </h3>
