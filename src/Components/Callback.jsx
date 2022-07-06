@@ -127,7 +127,7 @@ const Callback = ({saturn_long_choice,assessment_type,saturn_choice}) => {
         }); 
     }
     
-    // sendMail();
+    sendMail();
 
     },[])
 

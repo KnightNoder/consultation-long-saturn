@@ -39,7 +39,7 @@ const WeightLossTwo = ({saturn_long_choice,Set_minor_data}) => {
               <ChoiceCard 
                 clickHandler={() => Set_minor_data("weight_management","work_style", "10-11 hours")} noImage="true" choice={saturn_long_choice.weight_management.work_style} value="10-11 hours"  text="10-11 hours"/>
               <ChoiceCard 
-                clickHandler={() => Set_minor_data("weight_management","work_style","11-12 hours")} noImage="true" choice={saturn_long_choice.weight_management.work_style} value="11-12 hours" text="6-8 hours"/>
+                clickHandler={() => Set_minor_data("weight_management","work_style","11-12 hours")} noImage="true" choice={saturn_long_choice.weight_management.work_style} value="11-12 hours" text="11-12 hours"/>
               <ChoiceCard 
                 clickHandler={() => Set_minor_data("weight_management","work_style", "12 and above")} noImage="true" choice={saturn_long_choice.weight_management.work_style} value="12 and above"  text="12 and above"/>
             </div>
