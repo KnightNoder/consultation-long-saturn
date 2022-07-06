@@ -79,7 +79,8 @@ export const getProductId = (
             return ["7658065002718", "7658065002718"]; // 2% Alpha buretin [4,4]
           if (skin_concern == "Dark circles")
             return ["7602723160286", "7602712576222"]; // Glow skin  serum [7,9]
-          if (skin_concern == "Dull Skin") return ["7602721095902", "10"]; // 3% Niacinamide face toner [1,10]
+          if (skin_concern == "Dull Skin")
+            return ["7602721095902", "7489917550814"]; // 3% Niacinamide face toner [1,10]
         } else if (skin_allergy_to == "Retinol") {
           if (skin_concern == "Open pores")
             return ["7602721095902", "7658081157342"]; // 3% Niacinamide face toner [1,2]
@@ -89,7 +90,8 @@ export const getProductId = (
             return ["7489917878494", "7489915977950"]; // Anti-acne gel [5,6]
           if (skin_concern == "Aging")
             return ["7658065002718", "7530240245982"]; // Anti-aging serum [4,11]
-          if (skin_concern == "Dark circles") return ["7602716573918", ""]; // 2% Alpha buretin [3,]
+          if (skin_concern == "Dark circles")
+            return ["7602716573918", "7530241163486"]; // 2% Alpha buretin [3,]
           if (skin_concern == "Acne marks & spots")
             return ["7602716573918", "7489917550814"]; // Anti-acne gel [3,10]
           if (skin_concern == "Dull Skin")
