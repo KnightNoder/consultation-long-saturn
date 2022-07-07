@@ -70,9 +70,15 @@ const Callback = ({saturn_long_choice,assessment_type,saturn_choice}) => {
             const compare_price_1 = product_recommended_1[0]["variants"][0]["compare_at_price"]
             const img_src_1 = product_recommended_1[0]["images"][0]["src"]
             const variant_id_1 =  product_recommended_1[0]["variants"][0]["id"]
+            const utm_tag = assessment_type  == '30 sec' ? "utm_source=website-consultation&utm_medium=short-consultation&utm_campaign=recommended-product" :
+            "utm_source=website-consultation&utm_medium=long-consultation&utm_campaign=highly-recommended-product"
+            assessment_type == '30 sec' ? 
+            Set_link_1(`${variant_id_1}:1?checkout[shipping_address][first_name]=${saturn_choice.user_info.first_name}&
+             checkout[shipping_address][last_name]=${saturn_choice.user_info.last_name}&
+             checkout[shipping_address][phone]=${saturn_choice.user_info.phone_number}?${utm_tag}`) :  
             Set_link_1(`${variant_id_1}:1?checkout[shipping_address][first_name]=${saturn_long_choice.user_info.first_name}&
              checkout[shipping_address][last_name]=${saturn_long_choice.user_info.last_name}&
-             checkout[shipping_address][phone]=${saturn_long_choice.user_info.phone_number}`
+             checkout[shipping_address][phone]=${saturn_long_choice.user_info.phone_number}&${utm_tag}`
             )
             // checkout[contact_email]=${saturn_long_choice.user_info.email}
             // Set_product_subtext(subtext)
@@ -93,7 +99,8 @@ const Callback = ({saturn_long_choice,assessment_type,saturn_choice}) => {
             const variant_id_2 =  product_recommended_2[0]["variants"][0]["id"]
             Set_link_2(`${variant_id_2}:1?checkout[shipping_address][first_name]=${saturn_long_choice.user_info.first_name}&
              checkout[shipping_address][last_name]=${saturn_long_choice.user_info.last_name}&
-             checkout[shipping_address][phone]=${saturn_long_choice.user_info.phone_number}`
+             checkout[shipping_address][phone]=${saturn_long_choice.user_info.phone_number}&
+             utm_source=website-consultation&utm_medium=long-consultation&utm_campaign=recommended-product`
             )
             // checkout[contact_email]=${saturn_long_choice.user_info.email}
             // Set_product_subtext(subtext)
