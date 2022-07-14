@@ -25,7 +25,7 @@ const SkinOne = ({saturn_long_choice,Set_minor_data}) => {
           text="My Skin"/>
         </div>
         <div className={`${disp ? "show-overlay-screen" : "hide-overlay-screen"}`}>
-          A balanced diet and plenty of rest are essential for keeping your skin looking its best.
+          A good diet and sufficient rest are crucial to maintaining healthy skin.
         </div>
         <div className="choice-container">
             <div className='assessment-image'>

@@ -27,18 +27,18 @@ const WeightLossTwo = ({saturn_long_choice,Set_minor_data,saturn_choice,Set_mino
           text="My weight management"/>
         </div>
         <div className={`${disp ? "show-overlay-screen" : "hide-overlay-screen"}`}>
-          Eating clean at regular intervals can help you notice changes in your weight management journey
+          Measuring your weight everyday helps you loose weight faster
         </div>
         <div className="choice-container">
             <div className='assessment-image'>
                 <ImageCard/>
             </div>
             <div className='assessment'>
-              <h5>How often do you eat meals in a day? </h5>
+              <h5>How many times do you eat in a day? </h5>
               <h5>(including tea, coffee, fruits, salads, snacks)  </h5>
               <ChoiceCard 
-                clickHandler={() => assessment_type == "6 mins" ? Set_minor_data("weight_management","meals_a_day","Greater than 6 times") : Set_minor_short_data("weight_management","meals_a_day","Greater than 6 times")} 
-                noImage="true" choice={assessment_type == "6 mins" ? saturn_long_choice.weight_management.meals_a_day : saturn_choice.weight_management.meals_a_day} value="Greater than 6 times" text="Greater than 6 times"/>
+                clickHandler={() => assessment_type == "6 mins" ? Set_minor_data("weight_management","meals_a_day","More than 6 times") : Set_minor_short_data("weight_management","meals_a_day","More than 6 times")} 
+                noImage="true" choice={assessment_type == "6 mins" ? saturn_long_choice.weight_management.meals_a_day : saturn_choice.weight_management.meals_a_day} value="More than 6 times" text="More than 6 times"/>
               <ChoiceCard 
                 clickHandler={() => assessment_type == "6 mins" ? Set_minor_data("weight_management","meals_a_day", "4-6 times"): Set_minor_short_data("weight_management","meals_a_day", "4-6 times") } 
                 noImage="true" choice={assessment_type == "6 mins" ? saturn_long_choice.weight_management.meals_a_day : saturn_choice.weight_management.meals_a_day} value="4-6 times"  text="4-6 times"/>

@@ -247,27 +247,27 @@ export const getSendMailData = (
       "weight-management": {
         Height: saturn_long_choice.user_info.height,
         Weight: saturn_long_choice.user_info.weight,
-        "How often do you eat meals in a day?":
+        "How many times do you eat in a day??":
           saturn_long_choice.weight_management.meals_a_day,
-        "How many days do you exercise in a week?":
+        "How many days do you exercise?":
           saturn_long_choice.weight_management.exercise_a_week,
-        "How about your work style?":
+        "How many hours do you work in a day?":
           saturn_long_choice.weight_management.work_style,
-        "Do you have any past allergy reactions to medicines?":
+        "Have you used weight management products before?":
           saturn_long_choice.weight_management.past_allergy,
-        "Which type of food do you prefer?":
+        "How often do you eat out?":
           saturn_long_choice.weight_management.food_preference,
-        "May I know your water intake per day in litres?":
+        "How many litres of water do you drink per day?":
           saturn_long_choice.weight_management.water_intake,
-        "Do you smoke or drink?":
+        "How often do you smoke or drink?":
           saturn_long_choice.weight_management.smoke_drink,
-        "May I know your sleeping pattern?":
+        "How many hours do you sleep?":
           saturn_long_choice.weight_management.sleeping_pattern,
-        "Which type of food do you mostly consume?":
+        "How often do you have junk food?":
           saturn_long_choice.weight_management.food_type,
-        "Did you use any weight management products before?":
+        "Have you used weight management products before?":
           saturn_long_choice.weight_management.weight_management_products,
-        "Does anyone in your family are overweight/obese?":
+        "Is anyone in your family overweight/Obese?":
           saturn_long_choice.weight_management.overweight,
         "Since when did you observe you are not in control of your weight?":
           saturn_long_choice.weight_management.not_in_control,
@@ -302,7 +302,8 @@ export const getSendMailData = (
         "May I know your sleeping pattern?":
           saturn_long_choice.skin.sleeping_pattern,
         "What is the frequency of your acne?": saturn_long_choice.skin.acne,
-        "Explain your eating culture": saturn_long_choice.skin.eating_culture,
+        "What type of diet do you follow?":
+          saturn_long_choice.skin.eating_culture,
         "Describe your skin type": saturn_long_choice.skin.skin_texture,
         "Did you use any skin products before and were allergic to them?":
           saturn_long_choice.skin.skin_products,

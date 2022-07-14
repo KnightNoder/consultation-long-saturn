@@ -27,16 +27,14 @@ const SkinOne = ({saturn_long_choice,Set_minor_data}) => {
               <ImageCard/>    
             </div>
             <div className='assessment'>
-              <h5>Which type of food do you mostly consume?</h5>
+              <h5>How often do you have junk food? </h5>
               <div className='scroll-div'>
                 <ChoiceCard show={disp}
-                  clickHandler={() => Set_minor_data("skin","food_type","Normal")} noImage="true" choice={saturn_long_choice.skin.food_type} value="Normal" text="Normal"/>
+                  clickHandler={() => Set_minor_data("skin","food_type","Frequently")} noImage="true" choice={saturn_long_choice.skin.food_type} value="Frequently" text="Frequently"/>
                 <ChoiceCard show={disp}
-                  clickHandler={() => Set_minor_data("skin","food_type","Junk")} noImage="true" choice={saturn_long_choice.skin.food_type} value="Junk"  text="Junk"/>
+                  clickHandler={() => Set_minor_data("skin","food_type","Rarely")} noImage="true" choice={saturn_long_choice.skin.food_type} value="Rarely"  text="Rarely"/>
                 <ChoiceCard show={disp}
-                  clickHandler={() => Set_minor_data("skin","food_type","Oily")} noImage="true" choice={saturn_long_choice.skin.food_type} value="Oily" text="Oily"/>
-                <ChoiceCard show={disp}
-                  clickHandler={() => Set_minor_data("skin","food_type","Healthy")} noImage="true" choice={saturn_long_choice.skin.food_type} value="Healthy"  text="Healthy"/>
+                  clickHandler={() => Set_minor_data("skin","food_type","Never")} noImage="true" choice={saturn_long_choice.skin.food_type} value="Never" text="Never"/>
               </div>
             </div>
         </div>

@@ -13,13 +13,13 @@ const WeightLossTwo = ({saturn_long_choice,Set_minor_data}) => {
     window.scrollTo(0, 0);
     setTimeout(() => {
       Set_disp(false)
-    }, 5000);
+    }, 3000);
   }, [])
 
   return (
     <>
         <div className={`${disp ? "show-overlay-screen" : "hide-overlay-screen"}`}>
-          There's something special about outside food--tastier, love! Though homemade food is healthy :)
+          There is nothing like mom's meals!
         </div>
         <div className='progress-bar-saturn-step'>
           <ProgressBarComp progress_step="76.5"
@@ -34,11 +34,13 @@ const WeightLossTwo = ({saturn_long_choice,Set_minor_data}) => {
                 <ImageCard/>
             </div>
             <div className='assessment'>
-              <h5>Which type of food do you prefer?</h5>
+              <h5>How often do you eat out?</h5>
               <ChoiceCard 
-                clickHandler={() => Set_minor_data("skin","food_preference","Homemade food")} noImage="true" choice={saturn_long_choice.skin.food_preference} value="Homemade food" text="Homemade food"/>
+                clickHandler={() => Set_minor_data("skin","food_preference","Once a week")} noImage="true" choice={saturn_long_choice.skin.food_preference} value="Once a week" text="Once a week"/>
               <ChoiceCard 
-                clickHandler={() => Set_minor_data("skin","food_preference", "Outside food")} noImage="true" choice={saturn_long_choice.skin.food_preference} value="Outside food"  text="Outside food"/>
+                clickHandler={() => Set_minor_data("skin","food_preference", "Multiple times a week")} noImage="true" choice={saturn_long_choice.skin.food_preference} value="Multiple times a week"  text="Multiple times a week"/>
+              <ChoiceCard 
+                clickHandler={() => Set_minor_data("skin","food_preference", "Never")} noImage="true" choice={saturn_long_choice.skin.food_preference} value="Never"  text="Never"/>
             </div>
         </div>
         <ProceedTemplate text="Proceed" choice={"skin-10"} backLink="skin-8" conditionMet="true"/>

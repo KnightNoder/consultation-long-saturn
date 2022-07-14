@@ -27,7 +27,7 @@ const SkinOne = ({saturn_long_choice,Set_minor_data}) => {
               <ImageCard/>    
             </div>
             <div className='assessment'>
-              <h5>Where are the wrinkles on your skin?</h5>
+              <h5>Where are the wrinkles on your face?</h5>
               <div className='scroll-div'>
                 <ChoiceCard show={disp}
                   clickHandler={() => Set_minor_data("skin","wrinkles_location","Around the eyes")} noImage="true" choice={saturn_long_choice.skin.wrinkles_location} value="Around the eyes" text="Around the eyes"/>

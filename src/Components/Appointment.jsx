@@ -15,7 +15,7 @@ const Appointment = ({saturn_long_choice,Set_data}) => {
               <ImageCard/>    
             </div>
             <div className='assessment'>
-              <h5>Hey! Your detailed case has been recorded. Wasn’t that easy?</h5>
+              <h5>Wasn’t that easy? Would you like a free consultation?</h5>
               <p style={{fontSize:"18px", marginTop:"3%"}}>How would you like us to respond?</p>
               <ChoiceCard    
                 clickHandler={() => Set_data("appointment_type","FREE Consultation call")} noImage="true"

@@ -27,14 +27,38 @@ const WeightLossTwo = ({saturn_long_choice,Set_minor_data}) => {
                 <ImageCard/>
             </div>
             <div className='assessment'>
-              <h5>Did you use any weight management products before?</h5>
+              <h5>Have you used weight management products before?</h5>
               <ChoiceCard 
                 clickHandler={() => Set_minor_data("weight_management","weight_management_products","Yes")} noImage="true" choice={saturn_long_choice.weight_management.weight_management_products} value="Yes" text="Yes"/>
               <ChoiceCard 
                 clickHandler={() => Set_minor_data("weight_management","weight_management_products", "No")} noImage="true" choice={saturn_long_choice.weight_management.weight_management_products} value="No"  text="No"/>
+              { saturn_long_choice.skin.skin_products == "Yes" ? <InputCard heading="" placeholder="List all those products here" value={saturn_long_choice.user_info.allergic_skin_products} 
+                onchange={(e) => {
+                  // assessment_type =="30 sec" ? 
+                  // Set_minor_short_data("user_info","email",e.target.value): Set_minor_data("user_info","email",e.target.value); 
+                  // SetVibrateEmail(false)
+                }} 
+                //  requiredErrorText="Please provide valid email to proceed" required="*" vibrate={vibrate_email}
+              /> : null}
             </div>
         </div>
         <ProceedTemplate text="Proceed" choice={"appointment"} backLink="weight-management-11" conditionMet="true"/>
+    </>
+  )
+}
+
+const InputCard = ({heading,placeholder,requiredErrorText,value,vibrate, required,onchange,inputMode,validity,numberCheck}) => {
+  return (
+    <>
+      <h3 style={{}}>{heading}
+        <div style={{display:"inline-block",fontSize:"20px",color:"#EA2C2C", marginLeft:"3px"}} className=''>{required}
+        </div>
+      </h3>
+      <input className='input' onChange={onchange} value={value} inputMode={inputMode}
+      type="text" placeholder={placeholder} onKeyDown={numberCheck} style={{height:"80px"}} /> 
+      <span style={ (vibrate && !validity) ? {visibility:"visible"} : {visibility:"hidden"}} className='error-text' id="two">
+        {requiredErrorText}
+      </span>
     </>
   )
 }

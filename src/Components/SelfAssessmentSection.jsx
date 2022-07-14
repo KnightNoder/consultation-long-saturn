@@ -52,7 +52,8 @@ const SelfAssessmentSection = ({Set_long_short}) => {
                                 <img src={pic3} alt="" />
                             </div>
                             <div className='report-text-content'>
-                                Get your FREE analysis and book an appointment in 30 sec
+                                {/* Get your FREE analysis and book an appointment in 30 sec */}
+                                Complete a short questionnaire to book your FREE consultation
                             </div>
                         </div>
                         <div className='report-text'>
@@ -61,14 +62,16 @@ const SelfAssessmentSection = ({Set_long_short}) => {
                             </div>
                             <div className='report-text-content'>
                                 {/* Get a free doctor’s consultation */}
+                                {/* Complete a short questionnaire to book your FREE consultation */}
                             </div>                   
                         </div>
                         <div className='report-text'>
                             <div className='tick'>
-                                <img src={pic3} alt="" />
+                                {/* <img src={pic3} alt="" /> */}
                             </div>
                             <div className='report-text-content'>
-                                Get recommended products that suit your concerns
+                                {/* Get recommended products that suit your concerns */}
+                                {/* Complete a short questionnaire to book your FREE consultation */}
                             </div>                   
                         </div>
                         <div className='report-text'>
@@ -100,7 +103,8 @@ const SelfAssessmentSection = ({Set_long_short}) => {
                                 <img src={pic3} alt="" />
                             </div>
                             <div className='report-text-content'>
-                                Get a complete assessment report in 6 minutes
+                                {/* Get a complete assessment report in 6 minutes */}
+                                Get a detailed assessment report in 6 min
                             </div>
                         </div>
                         <div className='report-text'>
@@ -108,15 +112,16 @@ const SelfAssessmentSection = ({Set_long_short}) => {
                                 <img src={pic3} alt="" />   
                             </div>
                             <div className='report-text-content'>
-                                Get a Free Doctor’s Consultation upon booking appointment 
+                                {/* Get a Free Doctor’s Consultation upon booking appointment  */}
+                                Book a FREE consultation with doctor to get a treatment plan
                             </div>
                         </div>
                         <div className='report-text'>
                             <div className='tick'>
-                                <img src={pic3} alt="" />
+                                {/* <img src={pic3} alt="" /> */}
                             </div>
                             <div className='report-text-content'>
-                                Get a Personalized Treatment Plan and assistance
+                                {/* Get a Personalized Treatment Plan and assistance */}
                             </div>
                         </div>
                     </div>

@@ -5,7 +5,7 @@ import ImageCard from '../ImageCard';
 import ProgressBarComp from '../../Components/ProgressBarComp';
 
 
-const SkinOne = ({saturn_long_choice,Set_minor_data}) => {
+const WeightLossEight = ({saturn_long_choice,Set_minor_data}) => {
   const [disp,Set_disp] = useState(false);
 
   useEffect(() => {
@@ -43,4 +43,4 @@ const SkinOne = ({saturn_long_choice,Set_minor_data}) => {
   )
 }
 
-export default SkinOne
+export default WeightLossEight

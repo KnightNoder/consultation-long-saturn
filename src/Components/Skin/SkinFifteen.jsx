@@ -6,13 +6,13 @@ import ProgressBarComp from '../../Components/ProgressBarComp';
 
 
 const SkinOne = ({saturn_long_choice,Set_minor_data}) => {
-  const [disp,Set_disp] = useState(true);
+  const [disp,Set_disp] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0,0);
-    setTimeout(() => {
-      Set_disp(false)
-    }, 3000);
+    // setTimeout(() => {
+    //   Set_disp(false)
+    // }, 3000);
   }, []);
 
   return (
@@ -33,7 +33,7 @@ const SkinOne = ({saturn_long_choice,Set_minor_data}) => {
               <ImageCard/>    
             </div>
             <div className='assessment'>
-              <h5>Do you smoke or drink?</h5>
+              <h5>How often do you smoke or drink? </h5>
               <div className='scroll-div'>
                 <ChoiceCard show={disp}
                   clickHandler={() => Set_minor_data("skin","smoke_drink","Daily")} noImage="true" choice={saturn_long_choice.skin.smoke_drink} value="Daily" text="Daily"/>

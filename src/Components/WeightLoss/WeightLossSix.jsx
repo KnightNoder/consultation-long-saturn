@@ -72,15 +72,13 @@ const WeightLossTwo = ({saturn_long_choice,Set_minor_data}) => {
                 <ImageCard/>
             </div>
             <div className='assessment'>
-              <h5>Which type of food do you mostly consume?</h5>
+              <h5>How often do you have junk food?</h5>
               <ChoiceCard 
-                clickHandler={() => Set_minor_data("weight_management","food_type","Normal")} noImage="true" choice={saturn_long_choice.weight_management.food_type} value="Normal" text="Normal"/>
+                clickHandler={() => Set_minor_data("weight_management","food_type","Frequently")} noImage="true" choice={saturn_long_choice.weight_management.food_type} value="Frequently" text="Frequently"/>
               <ChoiceCard 
-                clickHandler={() => Set_minor_data("weight_management","food_type", "Junk")} noImage="true" choice={saturn_long_choice.weight_management.food_type} value="Junk"  text="Junk"/>
+                clickHandler={() => Set_minor_data("weight_management","food_type", "Rarely")} noImage="true" choice={saturn_long_choice.weight_management.food_type} value="Rarely"  text="Rarely"/>
               <ChoiceCard 
-                clickHandler={() => Set_minor_data("weight_management","food_type","Oily")} noImage="true" choice={saturn_long_choice.weight_management.food_type} value="Oily" text="Oily"/>
-              <ChoiceCard 
-                clickHandler={() => Set_minor_data("weight_management","food_type", "Healthy")} noImage="true" choice={saturn_long_choice.weight_management.food_type} value="Healthy"  text="Healthy"/>
+                clickHandler={() => Set_minor_data("weight_management","food_type","Never")} noImage="true" choice={saturn_long_choice.weight_management.food_type} value="Never" text="Never"/>
             </div>
         </div>
         <ProceedTemplate text="Proceed" choice={"weight-management-6"} backLink="weight-management-4" conditionMet="true"/>

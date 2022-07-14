@@ -75,11 +75,16 @@ const WeightLossTwo = ({saturn_long_choice,Set_minor_data}) => {
                 <ImageCard/>
             </div>
             <div className='assessment'>
-              <h5>Which type of food do you prefer?</h5>
+              <h5>How often do you eat out?</h5>
               <ChoiceCard 
-                clickHandler={() => Set_minor_data("weight_management","food_preference","Homemade food")} noImage="true" choice={saturn_long_choice.weight_management.food_preference} value="Homemade food" text="Homemade food"/>
+                clickHandler={() => Set_minor_data("weight_management","food_preference","Once a week")} noImage="true" 
+                choice={saturn_long_choice.weight_management.food_preference} value="Once a week" text="Once a week"/>
               <ChoiceCard 
-                clickHandler={() => Set_minor_data("weight_management","food_preference", "Outside food")} noImage="true" choice={saturn_long_choice.weight_management.food_preference} value="Outside food"  text="Outside food"/>
+                clickHandler={() => Set_minor_data("weight_management","food_preference", "Multiple times a week")} noImage="true" 
+                choice={saturn_long_choice.weight_management.food_preference} value="Multiple times a week"  text="Multiple times a week"/>
+              <ChoiceCard 
+                clickHandler={() => Set_minor_data("weight_management","food_preference","Never")} noImage="true" 
+                choice={saturn_long_choice.weight_management.food_preference} value="Never" text="Never"/>
             </div>
         </div>
         <ProceedTemplate text="Proceed" choice={"weight-management-5"} backLink="weight-management-3" conditionMet="true"/>

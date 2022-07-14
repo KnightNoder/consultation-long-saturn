@@ -1,47 +1,41 @@
-import assessmentImage from '../../images/assessment.png'
 import ChoiceCard from '.././ChoiceCard';
 import ProceedTemplate from '.././ProceedTemplate';
-import { useState, useEffect } from 'react';
+import {useState,useEffect } from 'react';
 import ImageCard from '../ImageCard';
 import ProgressBarComp from '../../Components/ProgressBarComp';
 
-const WeightLossTwo = ({saturn_long_choice,Set_minor_data}) => {
-  const [disp,Set_disp] = useState(true);
+
+const WeightLossNine = ({saturn_long_choice,Set_minor_data}) => {
+  const [disp,Set_disp] = useState(false);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    setTimeout(() => {
-      Set_disp(false)
-    }, 3000);
-  }, [])
+    window.scrollTo(0,0);
+  }, []);
 
   return (
     <>
         <div className='progress-bar-saturn-step'>
-          <ProgressBarComp progress_step="92.6"
-          img_1="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/w-1.png?v=1655109040"
-          img_2="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/w-2.png?v=1655109040"
-          img_3="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/w-3.png?v=1655109040"
-          img_4="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/w-4.png?v=1655109040"
-          text="My weight management"/>
-        </div>
-        <div className={`${disp ? "show-overlay-screen" : "hide-overlay-screen"}`}>
-            Let's not tell your boss how many hours you worked yesterday.
+          <ProgressBarComp progress_step="92"
+          img_1="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-1.png?v=1655109040"
+          img_2="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-2.png?v=1655109040"
+          img_3="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-3.png?v=1655109040"
+          img_4="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/skin-4.png?v=1655109040"
+          text="My Skin"/>
         </div>
         <div className="choice-container">
             <div className='assessment-image'>
-                <ImageCard/>
+              <ImageCard/>    
             </div>
             <div className='assessment'>
-              <h5>How about your work style?</h5>
-              <ChoiceCard 
-                clickHandler={() => Set_minor_data("weight_management","work_style","9-10 hours")} noImage="true" choice={saturn_long_choice.weight_management.work_style} value="9-10 hours" text="9-10 hours"/>
-              <ChoiceCard 
-                clickHandler={() => Set_minor_data("weight_management","work_style", "10-11 hours")} noImage="true" choice={saturn_long_choice.weight_management.work_style} value="10-11 hours"  text="10-11 hours"/>
-              <ChoiceCard 
-                clickHandler={() => Set_minor_data("weight_management","work_style","11-12 hours")} noImage="true" choice={saturn_long_choice.weight_management.work_style} value="11-12 hours" text="11-12 hours"/>
-              <ChoiceCard 
-                clickHandler={() => Set_minor_data("weight_management","work_style", "12 and above")} noImage="true" choice={saturn_long_choice.weight_management.work_style} value="12 and above"  text="12 and above"/>
+              <h5>What type of diet do you follow?</h5>
+              <div className='scroll-div'>
+                <ChoiceCard show={disp}
+                  clickHandler={() => Set_minor_data("weight_management","eating_culture","Vegetarian including milk products")} noImage="true" choice={saturn_long_choice.weight_management.eating_culture} value="Vegetarian including milk products" text="Vegetarian including milk products"/>
+                <ChoiceCard show={disp}
+                  clickHandler={() => Set_minor_data("weight_management","eating_culture","Vegetarian without milk products")} noImage="true" choice={saturn_long_choice.weight_management.eating_culture} value="Vegetarian without milk products"  text="Vegetarian without milk products"/>
+                <ChoiceCard show={disp}
+                clickHandler={() => Set_minor_data("weight_management","eating_culture","Non-vegetarian")} noImage="true" choice={saturn_long_choice.weight_management.eating_culture} value="Non-vegetarian" text="Non-vegetarian"/>
+              </div>
             </div>
         </div>
         <ProceedTemplate text="Proceed" choice={"weight-management-8"} backLink="weight-management-6" conditionMet="true"/>
@@ -49,4 +43,4 @@ const WeightLossTwo = ({saturn_long_choice,Set_minor_data}) => {
   )
 }
 
-export default WeightLossTwo
+export default WeightLossNine

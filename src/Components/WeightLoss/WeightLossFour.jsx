@@ -112,7 +112,7 @@ const WeightLossTwo = ({saturn_long_choice,Set_minor_data}) => {
                 <ImageCard/>
             </div>
             <div className='assessment'>
-              <h5>May I know your water intake per day in litres?</h5>
+              <h5>How many litres of water do you drink per day?</h5>
               <ChoiceCard 
                 clickHandler={() => Set_minor_data("weight_management","water_intake","1-2 litres")} noImage="true" choice={saturn_long_choice.weight_management.water_intake} value="1-2 litres" text="1-2 litres"/>
               <ChoiceCard 

@@ -26,14 +26,14 @@ const WeightLossTwo = ({saturn_long_choice,Set_minor_data}) => {
           text="My weight management"/>
         </div>
         <div className={`${disp ? "show-overlay-screen" : "hide-overlay-screen"}`}>
-            A balanced diet and plenty of rest are essential for keeping your skin looking its best.
+            A good diet and sufficient rest are crucial to maintaining healthy skin.
         </div>
         <div className="choice-container">
             <div className='assessment-image'>
                 <ImageCard/>
             </div>
             <div className='assessment'>
-              <h5>May I know your sleeping pattern?</h5>
+              <h5>How many hours do you sleep?</h5>
               <ChoiceCard 
                 clickHandler={() => Set_minor_data("weight_management","sleeping_pattern","3-5 hours")} noImage="true" choice={saturn_long_choice.weight_management.sleeping_pattern} value="3-5 hours" text="3-5 hours"/>
               <ChoiceCard 

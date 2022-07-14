@@ -1,22 +1,21 @@
 import assessmentImage from '../../images/assessment.png'
 import ChoiceCard from '.././ChoiceCard';
 import ProceedTemplate from '.././ProceedTemplate';
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import ImageCard from '../ImageCard';
 import ProgressBarComp from '../../Components/ProgressBarComp';
 
-const WeightLossThree = ({saturn_long_choice,Set_minor_data,saturn_choice,Set_minor_short_data,assessment_type}) => {
+const WeightLossTwo = ({saturn_long_choice,Set_minor_data}) => {
   const [disp,Set_disp] = useState(false);
 
-  useEffect(()=>{
-    window.scrollTo(0,0);
-  },[])
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
 
   return (
     <>
-
-        <div className={`${assessment_type == "6 mins" ? "progress-bar-saturn-step" : "hide-overlay-screen"}`}>
-          <ProgressBarComp progress_step="100"
+        <div className='progress-bar-saturn-step'>
+          <ProgressBarComp progress_step="100" 
           img_1="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/w-1.png?v=1655109040"
           img_2="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/w-2.png?v=1655109040"
           img_3="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/w-3.png?v=1655109040"
@@ -28,29 +27,18 @@ const WeightLossThree = ({saturn_long_choice,Set_minor_data,saturn_choice,Set_mi
                 <ImageCard/>
             </div>
             <div className='assessment'>
-              <h5>How many days do you exercise in a week?</h5>
-              <h5>(no judgements here)</h5>
+              <h5>How often do you smoke or drink?</h5>
               <ChoiceCard 
-                clickHandler={() => assessment_type == "6 mins" ? Set_minor_data("weight_management","exercise_a_week","Don't work out at all") : Set_minor_short_data("weight_management","exercise_a_week","Don't work out at all")} 
-                noImage="true" choice={assessment_type == "6 mins" ? saturn_long_choice.weight_management.exercise_a_week :  saturn_choice.weight_management.exercise_a_week} 
-                value="Don't work out at all" text="Don't work out at all"/>
+                clickHandler={() => Set_minor_data("weight_management","smoke_drink","Daily")} noImage="true" choice={saturn_long_choice.weight_management.smoke_drink} value="Daily" text="Daily"/>
               <ChoiceCard 
-                clickHandler={() => assessment_type == "6 mins" ? Set_minor_data("weight_management","exercise_a_week","Daily") : Set_minor_short_data("weight_management","exercise_a_week","Daily")} 
-                noImage="true" choice={assessment_type == "6 mins" ? saturn_long_choice.weight_management.exercise_a_week :  saturn_choice.weight_management.exercise_a_week}  
-                value="Daily" text="Daily"/>
+                clickHandler={() => Set_minor_data("weight_management","smoke_drink", "Occasionally")} noImage="true" choice={saturn_long_choice.weight_management.smoke_drink} value="Occasionally"  text="Occasionally"/>
               <ChoiceCard 
-               clickHandler={() => assessment_type == "6 mins" ? Set_minor_data("weight_management","exercise_a_week","5-6 times a week") : Set_minor_short_data("weight_management","exercise_a_week","5-6 times a week")} 
-               noImage="true" choice={assessment_type == "6 mins" ? saturn_long_choice.weight_management.exercise_a_week :  saturn_choice.weight_management.exercise_a_week}  
-               value="5-6 times a week" text="5-6 times a week"/>
-              <ChoiceCard 
-               clickHandler={() => assessment_type == "6 mins" ? Set_minor_data("weight_management","exercise_a_week","1-2 times a week") : Set_minor_short_data("weight_management","exercise_a_week","1-2 times a week")} 
-               noImage="true" choice={assessment_type == "6 mins" ? saturn_long_choice.weight_management.exercise_a_week :  saturn_choice.weight_management.exercise_a_week}  
-               value="1-2 times a week" text="1-2 times a week"/>
+                clickHandler={() => Set_minor_data("weight_management","smoke_drink", "Never")} noImage="true" choice={saturn_long_choice.weight_management.smoke_drink} value="Never"  text="Never"/>
             </div>
         </div>
-        <ProceedTemplate text="Proceed" choice={`${assessment_type ==  "6 mins" ? "weight-management-10" : "weight-management-13"}`} backLink={`${assessment_type == "6 min" ? "weight-management-8" : "weight-management-1"}`} conditionMet="true"/>
+        <ProceedTemplate text="Proceed" choice={"weight-management-10"} backLink="weight-management-8" conditionMet="true"/>
     </>
   )
 }
 
-export default WeightLossThree
+export default WeightLossTwo

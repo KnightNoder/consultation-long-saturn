@@ -26,14 +26,14 @@ const WeightLossTwo = ({saturn_long_choice,Set_minor_data,assessment_type}) => {
           text="My weight management"/>
         </div>
         <div className={`${disp ? "show-overlay-screen" : "hide-overlay-screen"}`}>
-          Fact: Your metabolism is quite “adaptable.” It will adjust based on what you do in your daily life.  
+            Your metabolism is highly responsive to your daily routine and adjusts accordingly
         </div>
         <div className="choice-container">
             <div className='assessment-image'>
                 <ImageCard/>
             </div>
             <div className='assessment'>
-              <h5>Does anyone in your family are overweight/obese?</h5>
+              <h5>Is anyone in your family overweight/Obese?</h5>
               <ChoiceCard 
                 clickHandler={() => Set_minor_data("weight_management","overweight","Yes")} noImage="true" choice={saturn_long_choice.weight_management.overweight} value="Yes" text="Yes"/>
               <ChoiceCard 

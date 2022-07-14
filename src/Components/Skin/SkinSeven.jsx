@@ -27,16 +27,16 @@ const SkinOne = ({saturn_long_choice,Set_minor_data}) => {
               <ImageCard/>    
             </div>
             <div className='assessment'>
-              <h5>Explain your wrinkles/ ageing pattern?</h5>
+              <h5>Do you have wrinkles or early signs of ageing pattern?</h5>
               <div className='scroll-div'>
                 <ChoiceCard show={disp}
                   clickHandler={() => Set_minor_data("skin","ageing_pattern","No wrinkles")} noImage="true" choice={saturn_long_choice.skin.ageing_pattern} value="No wrinkles" text="No wrinkles"/>
                 <ChoiceCard show={disp}
-                  clickHandler={() => Set_minor_data("skin","ageing_pattern","Ageing signs")} noImage="true" choice={saturn_long_choice.skin.ageing_pattern} value="Ageing signs"  text="Ageing signs"/>
+                  clickHandler={() => Set_minor_data("skin","ageing_pattern","Early signs of ageing")} noImage="true" choice={saturn_long_choice.skin.ageing_pattern} value="Early signs of ageing"  text="Early signs of ageing"/>
                 <ChoiceCard show={disp}
                 clickHandler={() => Set_minor_data("skin","ageing_pattern","I have wrinkles around my eyes and cheeks")} noImage="true" choice={saturn_long_choice.skin.ageing_pattern} value="I have wrinkles around my eyes and cheeks" text="I have wrinkles around my eyes and cheeks"/>
                 <ChoiceCard show={disp}
-                clickHandler={() => Set_minor_data("skin","ageing_pattern","I have few lines of ageing on forehead")} noImage="true" choice={saturn_long_choice.skin.ageing_pattern} value="I have few lines of ageing on forehead" text="I have few lines of ageing on forehead"/>
+                clickHandler={() => Set_minor_data("skin","ageing_pattern","I have ageing lines on my forehead")} noImage="true" choice={saturn_long_choice.skin.ageing_pattern} value="I have ageing lines on my forehead" text="I have ageing lines on my forehead"/>
               </div>
             </div>
         </div>

@@ -6,7 +6,7 @@ import ProgressBarComp from '../../Components/ProgressBarComp';
 
 const SkinTwo = ({saturn_long_choice,Set_minor_data,saturn_choice,
   Set_minor_short_data,assessment_type}) => {
-  const [disp,Set_disp] = useState(false);
+  const [disp,Set_disp] = useState(true);
   useEffect(() => {
     window.scrollTo(0,0);
     setTimeout(() => {

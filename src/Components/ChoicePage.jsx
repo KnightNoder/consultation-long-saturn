@@ -35,7 +35,7 @@ const ChoicePage = ({saturn_long_choice,Set_data,Set_minor_data,
                 <ImageCard/>
             </div>
             <div className='assessment'>
-              <h5>FREE online consultation starts here:</h5>
+              <h5>Select category for consultation</h5>
               <h4 className='subtext'>Tell us what we can help you with</h4>
               <ChoiceCard 
                clickHandler={() => 

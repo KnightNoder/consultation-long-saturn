@@ -73,8 +73,8 @@ function App() {
       "skin_allergy_to":"Vitamin C",
       "acne":"Once in a week",
       "water_intake":"1-2 litres",
-      "food_preference":"Homemade food",
-      "food_type":"Oily",
+      "food_preference":"Multiple times a week",
+      "food_type":"Frequently",
       "eating_culture":"Non-vegetarian",
       "sleeping_pattern":"3-5 hours",
       "work_style":"9-10 hours",
@@ -92,10 +92,11 @@ function App() {
       "pimples_acne":"Yes",
       "ageing_pattern":"Ageing signs",
       "wrinkles_location":"Around the eyes",
-      "skin_products":"Yes"
+      "skin_products":"Yes",
+      "allergic_skin_products":""
     },
     "weight_management":{
-      "meals_a_day":"Greater than 6 times",
+      "meals_a_day":"More than 6 times",
       "exercise_a_week":"Daily",
       "overweight":"Yes",
       "water_intake":"1-2 litres",
@@ -107,7 +108,8 @@ function App() {
       "exercise":"Daily",
       "past_allergy":"Yes",
       "not_in_control":"Months",
-      "weight_management_products":"Yes"
+      "weight_management_products":"Yes",
+      "eating_culture":"Vegetarian including milk products"
     },
     "appointment_type":"FREE Consultation call"
   })
@@ -392,7 +394,7 @@ const Set_others_input = (item,val) => {
              <Route path='/weight-management-10' exact element={<WeightLossEleven saturn_long_choice={saturn_long_choice}
              Set_minor_data={Set_minor_data} 
              saturn_choice={saturn_choice}
-             Set_minor_short_data= {Set_minor_short_data}/>}/>
+             Set_minor_short_data= {Set_minor_short_data} assessment_type={assessment_type}/>}/>
              <Route path='/weight-management-11' exact element={<WeightLossTwelve saturn_long_choice={saturn_long_choice}
              Set_minor_data={Set_minor_data} 
              saturn_choice={saturn_choice}

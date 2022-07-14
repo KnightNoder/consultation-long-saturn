@@ -33,14 +33,14 @@ const SkinOne = ({saturn_long_choice,Set_minor_data}) => {
               <ImageCard/>    
             </div>
             <div className='assessment'>
-              <h5>How about your work style?</h5>
+              <h5>How many hours do you work in a day?</h5>
               <div className='scroll-div'>
                 <ChoiceCard show={disp}
-                  clickHandler={() => Set_minor_data("skin","work_style","9-10 hours")} noImage="true" choice={saturn_long_choice.skin.work_style} value="9-10 hours" text="9-10 hours"/>
+                  clickHandler={() => Set_minor_data("skin","work_style","< 9 hours")} noImage="true" choice={saturn_long_choice.skin.work_style} value="< 9 hours" text="< 9 hours"/>
                 <ChoiceCard show={disp}
-                  clickHandler={() => Set_minor_data("skin","work_style","10-11 hours")} noImage="true" choice={saturn_long_choice.skin.work_style} value="10-11 hours"  text="10-11 hours"/>
+                  clickHandler={() => Set_minor_data("skin","work_style","9-10 hours")} noImage="true" choice={saturn_long_choice.skin.work_style} value="9-10 hours"  text="9-10 hours"/>
                 <ChoiceCard show={disp}
-                clickHandler={() => Set_minor_data("skin","work_style","11-12 hours")} noImage="true" choice={saturn_long_choice.skin.work_style} value="11-12 hours" text="11-12 hours"/>
+                clickHandler={() => Set_minor_data("skin","work_style","10-12 hours")} noImage="true" choice={saturn_long_choice.skin.work_style} value="10-12 hours" text="10-12 hours"/>
                 <ChoiceCard show={disp}
                 clickHandler={() => Set_minor_data("skin","work_style","12 and above")} noImage="true" choice={saturn_long_choice.skin.work_style} value="12 and above" text="12 and above"/>
               </div>
